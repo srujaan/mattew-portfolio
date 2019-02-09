@@ -1,4 +1,4 @@
-const PARTICLE_COLOR = '#00C4FF'
+const PARTICLE_COLOR = '#fafeff'
 
 export const particles = {
   particles: {

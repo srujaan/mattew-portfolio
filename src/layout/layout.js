@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
 
 import theme from '../theme'
@@ -11,6 +12,8 @@ const GlobalStyle = createGlobalStyle`
     color: ${props => props.theme.colors.primary};
     font-family: 'hack';
     font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   a {
@@ -37,6 +40,11 @@ const Nav = styled.div`
   flex-direction: column;
   top: 0;
   height: 100vh;
+
+  a {
+    margin: 5px;
+    padding: 5px;
+  }
 `
 
 const Layout = ({ children }) => (
@@ -45,21 +53,25 @@ const Layout = ({ children }) => (
       <GlobalStyle />
       {children}
       <Nav>
-        <h1>
-          <a href='#'>design</a>
-        </h1>
+        <h2>
+          <Link to='/'>home</Link>
+        </h2>
 
-        <h1>
+        <h2>
+          <Link to='/about'>about</Link>
+        </h2>
+
+        <h2>
+          <Link to='#'>design</Link>
+        </h2>
+
+        <h2>
           <a href='#'>develop</a>
-        </h1>
+        </h2>
 
-        <h1>
-          <a href='#'>about</a>
-        </h1>
-
-        <h1>
+        <h2>
           <a href='#'>contact</a>
-        </h1>
+        </h2>
       </Nav>
     </LayoutContainer>
   </ThemeProvider>

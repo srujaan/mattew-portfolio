@@ -22,7 +22,7 @@ const ParticlesContainer = styled.div`
   z-index: -1;
 `
 
-export default () => (
+const IndexPage = () => (
   <Layout>
     <ParticlesContainer>
       <Particles params={particles} />
@@ -34,3 +34,5 @@ export default () => (
     </div>
   </Layout>
 )
+
+export default IndexPage
