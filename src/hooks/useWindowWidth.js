@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { debounce } from 'underscore'
 
 function useWindowWidth () {
   if (typeof window !== `undefined`) {
@@ -6,7 +7,7 @@ function useWindowWidth () {
 
     useEffect(() => {
       const handleResize = () => setWidth(window.innerWidth)
-      window.addEventListener('resize', handleResize)
+      window.addEventListener('resize', debounce(handleResize, 100))
       return () => {
         window.removeEventListener('resize', handleResize)
       }
@@ -15,6 +16,7 @@ function useWindowWidth () {
     return width
   }
 
+  // SSR needs something to return here since no window
   return 0
 }
 
