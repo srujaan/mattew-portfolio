@@ -1,89 +1,59 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import styled, { createGlobalStyle, withTheme } from 'styled-components'
+import styled, { withTheme } from 'styled-components'
+import GlobalStyle from '../theme/GlobalStyle'
 
-const GlobalStyle = createGlobalStyle`
-  @import url("https://use.typekit.net/jhn5itl.css");
+import { Composition } from 'atomic-layout'
+import {
+  mediaBreakpointUpSm,
+  md
+} from 'styled-bootstrap-responsive-breakpoints'
 
-  body {
-    background-color: ${props => props.theme.colors.background};
-    color: ${props => props.theme.colors.text};
-    font-family: 'hack';
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+import useWindowWidth from '../hooks/useWindowWidth'
 
-  h1, h2, h3, h4, h5 {
-    color: ${props => props.theme.colors.primary};
-  }
+import Navigation from './Navigation'
 
-  a {
-    text-decoration: none;
-    color: ${props => props.theme.colors.primary};
-
-    &:hover {
-      color: ${props => props.theme.colors.background};
-      background: ${props => props.theme.colors.primary};
-    }
-  }
+const template = `
+  main nav
+  footer footer
 `
 
-const LayoutContainer = styled.div`
-  position: fixed;
-  width: 100vw;
-  display: grid;
-  grid-template-columns: minmax(200px, 1fr) 200px;
+const templateMobile = `
+  nav
+  main
+  footer
 `
 
 const ContentContainer = styled.div`
-  padding: 10vw;
-`
-
-const Nav = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  top: 0;
-  height: 100vh;
-
-  a {
-    margin: 5px;
-    padding: 5px;
-  }
+  ${mediaBreakpointUpSm`
+    padding: 10vw;
+  `}
 `
 
 const ThemeToggle = styled.span`
   position: absolute;
   top: 10;
   left: 10;
+  z-index: 99;
 `
 
 const Layout = ({ children, theme }) => {
+  const width = useWindowWidth()
   return (
-    <LayoutContainer>
-      <GlobalStyle />
-
-      <ThemeToggle onClick={theme.toggleTheme}>Toggle Theme</ThemeToggle>
-      <ContentContainer>{children}</ContentContainer>
-      <Nav>
-        <h2>
-          <Link to='/'>home</Link>
-        </h2>
-
-        <h2>
-          <Link to='/blog'>blog</Link>
-        </h2>
-
-        <h2>
-          <Link to='#'>portfolio</Link>
-        </h2>
-
-        <h2>
-          <a href='#'>contact</a>
-        </h2>
-      </Nav>
-    </LayoutContainer>
+    <Composition template={templateMobile} templateMd={template}>
+      {({ Main, Nav, Footer }) => (
+        <React.Fragment>
+          <GlobalStyle />
+          <ThemeToggle onClick={theme.toggleTheme}>Toggle Theme</ThemeToggle>
+          <Main>
+            <ContentContainer>{children}</ContentContainer>
+          </Main>
+          <Nav>
+            <Navigation isMobile={width <= md} />
+          </Nav>
+          <Footer>Width: {width}</Footer>
+        </React.Fragment>
+      )}
+    </Composition>
   )
 }
 
