@@ -21,7 +21,7 @@ const initialState = () => {
     return darkMode || userPrefersDarkMode ? dark : light
   }
 
-  return dark
+  return light
 }
 
 export const Theme = ({ children, props }) => {
