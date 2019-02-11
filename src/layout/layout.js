@@ -1,42 +1,12 @@
 import React from 'react'
-import styled, { withTheme, createGlobalStyle } from 'styled-components'
+import styled, { withTheme } from 'styled-components'
 
 import { Composition } from 'atomic-layout'
-import {
-  mediaBreakpointUpSm,
-  md
-} from 'styled-bootstrap-responsive-breakpoints'
+import { md } from 'styled-bootstrap-responsive-breakpoints'
 
 import useWindowWidth from '../hooks/useWindowWidth'
-
+import GlobalStyle from '../theme/GlobalStyle'
 import Navigation from './Navigation'
-
-const GlobalStyle = createGlobalStyle`
-  @import url("https://use.typekit.net/jhn5itl.css");
-
-  body {
-    background-color: ${props => props.theme.colors.background};
-    color: ${props => props.theme.colors.text};
-    font-family: 'hack';
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  h1, h2, h3, h4, h5 {
-    color: ${props => props.theme.colors.primary};
-  }
-
-  a {
-    text-decoration: none;
-    color: ${props => props.theme.colors.primary};
-
-    &:hover {
-      color: ${props => props.theme.colors.background};
-      background: ${props => props.theme.colors.primary};
-    }
-  }
-`
 
 const template = `
   main nav
@@ -50,9 +20,7 @@ const templateMobile = `
 `
 
 const ContentContainer = styled.div`
-  ${mediaBreakpointUpSm`
-    padding: 10vw;
-  `}
+  padding: 10vw;
 `
 
 const ThemeToggle = styled.span`
