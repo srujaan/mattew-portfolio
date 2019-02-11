@@ -1,19 +1,21 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
-
-import theme from '../theme'
+import styled, { createGlobalStyle, withTheme } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   @import url("https://use.typekit.net/jhn5itl.css");
 
   body {
     background-color: ${props => props.theme.colors.background};
-    color: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.text};
     font-family: 'hack';
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5 {
+    color: ${props => props.theme.colors.primary};
   }
 
   a {
@@ -34,6 +36,10 @@ const LayoutContainer = styled.div`
   grid-template-columns: minmax(200px, 1fr) 200px;
 `
 
+const ContentContainer = styled.div`
+  padding: 10vw;
+`
+
 const Nav = styled.div`
   display: flex;
   justify-content: center;
@@ -47,26 +53,30 @@ const Nav = styled.div`
   }
 `
 
-const Layout = ({ children }) => (
-  <ThemeProvider theme={theme}>
+const ThemeToggle = styled.span`
+  position: absolute;
+  top: 10;
+  left: 10;
+`
+
+const Layout = ({ children, theme }) => {
+  return (
     <LayoutContainer>
       <GlobalStyle />
-      {children}
+
+      <ThemeToggle onClick={theme.toggleTheme}>Toggle Theme</ThemeToggle>
+      <ContentContainer>{children}</ContentContainer>
       <Nav>
         <h2>
           <Link to='/'>home</Link>
         </h2>
 
         <h2>
-          <Link to='/about'>about</Link>
+          <Link to='/blog'>blog</Link>
         </h2>
 
         <h2>
-          <Link to='#'>design</Link>
-        </h2>
-
-        <h2>
-          <a href='#'>develop</a>
+          <Link to='#'>portfolio</Link>
         </h2>
 
         <h2>
@@ -74,7 +84,7 @@ const Layout = ({ children }) => (
         </h2>
       </Nav>
     </LayoutContainer>
-  </ThemeProvider>
-)
+  )
+}
 
-export default Layout
+export default withTheme(Layout)

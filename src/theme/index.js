@@ -1,9 +1,17 @@
-const theme = {
+export const dark = {
   colors: {
-    background: 'hsl(194, 100%, 5%)',
-    primary: 'hsl(194, 100%, 50%)',
-    hoverLink: 'hsl(194, 100%, 75%)'
+    background: '#282a36',
+    text: '#f8f8f2',
+    primary: '#50fa7b',
+    green: '#50fa7b'
   }
 }
 
-export default theme
+export const light = {
+  colors: {
+    ...dark.colors,
+    background: '#f8f8f2',
+    text: '#282a36',
+    primary: '#ff5555'
+  }
+}
