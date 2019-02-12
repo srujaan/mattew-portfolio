@@ -14,7 +14,6 @@ const PostLayout = ({
   return (
     <Layout>
       <h1>{title.text}</h1>
-      <h3>{description}</h3>
       <Slices body={body} />
     </Layout>
   )
@@ -77,7 +76,7 @@ export const query = graphql`
               image {
                 localFile {
                   childImageSharp {
-                    fluid(maxWidth: 1200, quality: 80) {
+                    fluid(maxWidth: 800, quality: 80) {
                       ...GatsbyImageSharpFluid_withWebp
                     }
                   }

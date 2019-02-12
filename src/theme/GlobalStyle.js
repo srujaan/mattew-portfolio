@@ -6,13 +6,13 @@ const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${props => props.theme.colors.background};
     color: ${props => props.theme.colors.text};
-    font-family: 'hack';
-    font-weight: 400;
+    font-family: 'fira-sans-2';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5 {
+    font-family: 'fira-sans-compressed';
     color: ${props => props.theme.colors.primary};
   }
 
