@@ -1,5 +1,4 @@
 import React from 'react'
-import Img from 'gatsby-image'
 
 import CodeBlock from './SliceTypes/CodeBlock'
 import ImageBlock from './SliceTypes/ImageBlock'
