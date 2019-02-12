@@ -11,15 +11,6 @@ const NavBar = styled.div`
   top: 0;
   height: 100vh;
   position: sticky;
-
-  a {
-    margin: 5px;
-    padding: 5px;
-    &:hover {
-      color: ${props => props.theme.colors.background};
-      background: ${props => props.theme.colors.primary};
-    }
-  }
 `
 
 const MobileNavMenu = styled(MenuAltRight)`
@@ -27,12 +18,12 @@ const MobileNavMenu = styled(MenuAltRight)`
   top: 0;
   right: 0;
   color: ${props =>
-    props.visible ? props.theme.colors.text : props.theme.colors.primary};
+    props.visible ? props.theme.colors.semiDark : props.theme.colors.primary};
   z-index: 100;
 `
 
 const MobileNav = styled.div`
-  background: ${props => props.theme.colors.primary};
+  background: ${props => props.theme.colors.navBg};
   position: fixed;
   z-index: 90;
   display: flex;
@@ -40,7 +31,7 @@ const MobileNav = styled.div`
   right: 0;
   bottom: 0;
   width: 200px;
-
+  border-left: 1px solid ${props => props.theme.colors.navText};
   justify-content: center;
   align-items: flex-end;
   flex-direction: column;
@@ -50,13 +41,18 @@ const MobileNav = styled.div`
 
   a {
     opacity: ${props => (props.visible ? '1' : '0')};
-    color: ${props => props.theme.colors.background};
     transition: opacity 0.3s 0.3s ease-in-out;
+  }
+`
+
+const NavLinksContainer = styled.div`
+  a {
+    color: ${props => props.theme.colors.navText};
     padding: 10px;
 
     &:hover {
       color: ${props => props.theme.colors.primary};
-      background: ${props => props.theme.colors.background};
+      background: ${props => props.theme.colors.semiDark};
     }
   }
 `
@@ -65,7 +61,7 @@ const Navigation = ({ isMobile }) => {
   const [navVisible, toggleNav] = useState(false)
 
   const NavLinks = () => (
-    <React.Fragment>
+    <NavLinksContainer>
       <h2>
         <Link to='/'>home</Link>
       </h2>
@@ -81,7 +77,7 @@ const Navigation = ({ isMobile }) => {
       <h2>
         <Link to='/contact'>contact</Link>
       </h2>
-    </React.Fragment>
+    </NavLinksContainer>
   )
   const mobileNav = () => {
     return (
