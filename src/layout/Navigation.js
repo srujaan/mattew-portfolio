@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { MenuAltRight } from 'styled-icons/boxicons-regular/MenuAltRight'
-import { md } from 'styled-bootstrap-responsive-breakpoints'
 
 const NavBar = styled.div`
   display: flex;
@@ -16,12 +15,6 @@ const NavBar = styled.div`
     margin: 5px;
     padding: 5px;
   }
-
-  @media screen and (max-width: ${md}px) {
-    height: 10vh;
-    flex-direction: row;
-  }
-  }
 `
 
 const MobileNavMenu = styled(MenuAltRight)`
@@ -29,7 +22,7 @@ const MobileNavMenu = styled(MenuAltRight)`
   top: 0;
   right: 0;
   color: ${props =>
-    props.navVisible ? props.theme.colors.text : props.theme.colors.primary};
+    props.visible ? props.theme.colors.text : props.theme.colors.primary};
   z-index: 100;
 `
 
@@ -46,8 +39,15 @@ const MobileNav = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(${props => (props.visible ? '0%' : '100%')});
+
   a {
-    color: ${props => props.theme.colors.text};
+    opacity: ${props => (props.visible ? '1' : '0')};
+    color: ${props => props.theme.colors.background};
+    transition: opacity 0.3s 0.3s ease-in-out;
+    padding: 10px;
     &:hover {
       color: ${props => props.theme.colors.primary};
       background: ${props => props.theme.colors.text};
@@ -79,14 +79,14 @@ const Navigation = ({ isMobile }) => {
   )
   const mobileNav = () => {
     return (
-      <NavBar>
+      <React.Fragment>
         <MobileNavMenu
           size={48}
-          navVisible={navVisible}
+          visible={navVisible}
           onClick={() => toggleNav(!navVisible)}
         />
-        {navVisible ? <MobileNav>{NavLinks()}</MobileNav> : null}
-      </NavBar>
+        <MobileNav visible={navVisible}>{NavLinks()}</MobileNav>
+      </React.Fragment>
     )
   }
 
