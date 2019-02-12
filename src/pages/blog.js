@@ -5,7 +5,7 @@ import { graphql, Link } from 'gatsby'
 
 const BlogPage = ({
   data: {
-    allPrismicBlogPost: { edges: posts }
+    allPrismicPost: { edges: posts }
   }
 }) => {
   return (
@@ -14,7 +14,7 @@ const BlogPage = ({
         let {
           node: {
             uid,
-            data: { title, subtitle }
+            data: { date, title, description }
           }
         } = post
 
@@ -23,7 +23,7 @@ const BlogPage = ({
             <Link to={`/blog/${uid}`}>
               <h2 key={`${uid}-title`}>{title.text}</h2>
             </Link>
-            <p key={`${uid}-subtitle`}>{subtitle.text}</p>
+            <p key={`${uid}-subtitle`}>{description}</p>
           </React.Fragment>
         )
       })}
@@ -35,18 +35,16 @@ export default BlogPage
 
 export const pageQuery = graphql`
   {
-    allPrismicBlogPost {
+    allPrismicPost {
       edges {
         node {
           uid
-          slugs
           data {
+            date
             title {
               text
             }
-            subtitle {
-              text
-            }
+            description
           }
         }
       }

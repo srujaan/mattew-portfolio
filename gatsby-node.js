@@ -5,7 +5,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const pages = await graphql(`
     {
-      allPrismicBlogPost {
+      allPrismicPost {
         edges {
           node {
             uid
@@ -17,7 +17,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const template = path.resolve('src/layout/PostLayout.js')
 
-  pages.data.allPrismicBlogPost.edges.forEach(edge => {
+  pages.data.allPrismicPost.edges.forEach(edge => {
     createPage({
       path: `/blog/${edge.node.uid}`,
       component: template,

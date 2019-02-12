@@ -69,17 +69,3 @@ const SocialMediaLinks = () => (
 )
 
 export default SocialMediaLinks
-
-export const query = graphql`
-  {
-    site {
-      siteMetadata {
-        twitter
-        github
-        linkedin
-        codepen
-        email
-      }
-    }
-  }
-`
