@@ -10,6 +10,7 @@ const NavBar = styled.div`
   flex-direction: column;
   top: 0;
   height: 100vh;
+  position: sticky;
 
   a {
     margin: 5px;

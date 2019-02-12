@@ -2,8 +2,7 @@ export const dark = {
   colors: {
     background: '#282a36',
     text: '#f8f8f2',
-    primary: '#50fa7b',
-    green: '#50fa7b'
+    primary: '#50fa7b'
   }
 }
 
