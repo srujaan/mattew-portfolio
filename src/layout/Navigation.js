@@ -14,6 +14,10 @@ const NavBar = styled.div`
   a {
     margin: 5px;
     padding: 5px;
+    &:hover {
+      color: ${props => props.theme.colors.background};
+      background: ${props => props.theme.colors.primary};
+    }
   }
 `
 
@@ -34,10 +38,10 @@ const MobileNav = styled.div`
   top: 0;
   right: 0;
   bottom: 0;
-  width: 100%;
+  width: 200px;
 
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   flex-direction: column;
 
   transition: transform 0.3s ease-in-out;
@@ -48,9 +52,10 @@ const MobileNav = styled.div`
     color: ${props => props.theme.colors.background};
     transition: opacity 0.3s 0.3s ease-in-out;
     padding: 10px;
+
     &:hover {
       color: ${props => props.theme.colors.primary};
-      background: ${props => props.theme.colors.text};
+      background: ${props => props.theme.colors.background};
     }
   }
 `

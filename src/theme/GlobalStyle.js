@@ -19,11 +19,6 @@ const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
     color: ${props => props.theme.colors.primary};
-
-    &:hover {
-      color: ${props => props.theme.colors.background};
-      background: ${props => props.theme.colors.primary};
-    }
   }
 `
 

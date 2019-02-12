@@ -5,6 +5,13 @@ require('dotenv').config({
 const path = require('path')
 
 module.exports = {
+  siteMetadata: {
+    twitter: 'https://twitter.com/_mattsecrist',
+    github: 'http://www.github.com/matthewsecrist',
+    linkedin: 'https://www.linkedin.com/in/matthew-secrist/',
+    codepen: 'http://codepen.io/msecrist',
+    email: 'matthew@matthewsecrist.net'
+  },
   plugins: [
     `gatsby-plugin-styled-components`,
     {

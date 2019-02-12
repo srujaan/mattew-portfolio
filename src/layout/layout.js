@@ -8,6 +8,8 @@ import useWindowWidth from '../hooks/useWindowWidth'
 import GlobalStyle from '../theme/GlobalStyle'
 import Navigation from './Navigation'
 
+import SocialMediaLinks from '../components/socialMediaLinks'
+
 const template = `
   main nav
   footer footer
@@ -29,6 +31,13 @@ const ThemeToggle = styled.span`
   left: 10;
   z-index: 99;
 `
+const Foot = styled.div`
+  padding: 1em;
+  font-size: 0.75em;
+  background: ${props => props.theme.primary};
+  text-align: center;
+  color: ${props => props.theme.background};
+`
 
 const Layout = ({ children, theme }) => {
   const width = useWindowWidth()
@@ -46,7 +55,15 @@ const Layout = ({ children, theme }) => {
           <Nav>
             <Navigation isMobile={width <= md} />
           </Nav>
-          <Footer>Width: {width}</Footer>
+          <Footer>
+            <Foot>
+              <SocialMediaLinks />
+              Built with <a href='http://www.gatsbyjs.com'>Gatsby</a> and{' '}
+              <a href='http://www.prismic.com'>Prismic</a>.
+              <p>&copy; Copyright 2019, Matthew Secrist</p>
+              <a href='https://github.com/matthewsecrist/v3'>Github</a>
+            </Foot>
+          </Footer>
         </React.Fragment>
       )}
     </Composition>
