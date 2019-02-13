@@ -23,6 +23,7 @@ module.exports = {
         accessToken: `${process.env.API_KEY}`,
         linkResolver: ({ node, key, value }) => post => `/blog/${post.uid}`
       }
-    }
+    },
+    `gatsby-plugin-netlify`
   ]
 }
