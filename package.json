@@ -20,6 +20,7 @@
     "gatsby-plugin-styled-components": "^3.0.5",
     "gatsby-source-prismic": "^2.2.0",
     "gatsby-transformer-sharp": "^2.1.13",
+    "moment": "^2.24.0",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "styled-bootstrap-responsive-breakpoints": "^7.0.0",
