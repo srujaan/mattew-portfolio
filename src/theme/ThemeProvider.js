@@ -22,25 +22,37 @@ const initialState = () => {
   return light
 }
 
-export const Theme = ({ children, props }) => {
-  const [theme, setTheme] = useState(initialState)
+class Theme extends React.Component {
+  state = {
+    theme: light
+  }
 
-  const toggleTheme = () => {
-    let darkMode = theme === dark
+  componentDidMount = () => {
+    this.setState({ theme: initialState() })
+  }
+
+  toggleTheme = () => {
+    let darkMode = this.state.theme === dark
     if (isBrowser) {
       window.localStorage.setItem('darkMode', !darkMode)
     }
-    setTheme(darkMode ? light : dark)
+    this.setState({ theme: darkMode ? light : dark })
   }
 
-  return (
-    <ThemeProvider
-      theme={{
-        colors: theme.colors,
-        toggleTheme: () => toggleTheme()
-      }}
-    >
-      {children}
-    </ThemeProvider>
-  )
+  render () {
+    const { children } = this.props
+    const { theme } = this.state
+    return (
+      <ThemeProvider
+        theme={{
+          colors: theme.colors,
+          toggleTheme: () => this.toggleTheme()
+        }}
+      >
+        {children}
+      </ThemeProvider>
+    )
+  }
 }
+
+export default Theme
