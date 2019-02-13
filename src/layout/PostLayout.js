@@ -1,8 +1,11 @@
 import React from 'react'
+import styled from 'styled-components'
 import Layout from './layout'
 import { graphql } from 'gatsby'
 
 import Slices from '../components/Slices'
+
+const PostContainer = styled.div``
 
 const PostLayout = ({
   data: {
@@ -13,8 +16,10 @@ const PostLayout = ({
 }) => {
   return (
     <Layout>
-      <h1>{title.text}</h1>
-      <Slices body={body} />
+      <PostContainer>
+        <h1>{title.text}</h1>
+        <Slices body={body} />
+      </PostContainer>
     </Layout>
   )
 }

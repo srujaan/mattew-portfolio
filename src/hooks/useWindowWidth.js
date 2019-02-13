@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { debounce } from 'underscore'
 
 function useWindowWidth () {
   if (typeof window !== `undefined`) {
@@ -6,7 +7,7 @@ function useWindowWidth () {
 
     useEffect(() => {
       const handleResize = () => setWidth(window.innerWidth)
-      window.addEventListener('resize', handleResize, 100)
+      window.addEventListener('resize', debounce(handleResize, 500))
       return () => {
         window.removeEventListener('resize', handleResize)
       }

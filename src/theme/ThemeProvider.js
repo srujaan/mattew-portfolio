@@ -19,7 +19,16 @@ const initialState = () => {
     return darkMode || userPrefersDarkMode ? dark : light
   }
 
-  return light
+  return {
+    colors: {
+      background: '#ffffff',
+      text: '#ffffff',
+      primary: '#ffffff',
+      navBg: '#ffffff',
+      navText: '#ffffff',
+      semiDark: '#ffffff'
+    }
+  }
 }
 
 const Theme = ({ children, props }) => {

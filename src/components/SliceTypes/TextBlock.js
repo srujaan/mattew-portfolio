@@ -10,6 +10,10 @@ const TextContainer = styled.div`
     color: ${props => props.theme.colors.background};
     border-radius: 5px;
   }
+
+  overflow: auto;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 `
 
 const TextBlock = ({

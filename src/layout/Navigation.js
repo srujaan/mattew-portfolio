@@ -62,6 +62,7 @@ const NavLinksContainer = styled.div`
 const Navigation = () => {
   const width = useWindowWidth()
   const isMobile = width <= md
+  const isServer = typeof window === 'undefined'
 
   const [navExpanded, toggleNavExpand] = useState(false)
 
@@ -97,9 +98,11 @@ const Navigation = () => {
     )
   }
 
-  const Nav = () => <NavBar>{NavLinks()}</NavBar>
+  const Nav = () => {
+    return <NavBar>{NavLinks()}</NavBar>
+  }
 
-  return !width ? null : isMobile ? mobileNav() : Nav()
+  return isServer ? null : isMobile ? mobileNav() : Nav()
 }
 
 export default Navigation

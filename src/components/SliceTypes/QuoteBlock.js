@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const BlockQuoteContainer = styled.div`
   blockquote {
     margin: 0 auto;
-    padding: 1em;
+    padding-left: 1em;
     border-left: 5px solid ${props => props.theme.colors.primary};
 
     * {
