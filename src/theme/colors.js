@@ -5,7 +5,8 @@ export const dark = {
     primary: '#50fa7b',
     navBg: '#282a36',
     navText: '#50fa7b',
-    semiDark: '#44475a'
+    semiDark: '#44475a',
+    codeBg: '#44475a'
   }
 }
 

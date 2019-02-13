@@ -6,10 +6,13 @@ const CodeBlockContainer = styled.div`
   max-width: 800px;
   width: 100%;
   margin: 0 auto;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
   img {
     width: 100%;
+    background: ${props => props.theme.colors.codeBg};
+    box-shadow: inset 0 0 10px #000000;
   }
 `
 
