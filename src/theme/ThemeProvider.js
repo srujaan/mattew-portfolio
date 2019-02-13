@@ -24,7 +24,7 @@ const initialState = () => {
 
 class Theme extends React.Component {
   state = {
-    theme: light
+    theme: initialState()
   }
 
   componentDidMount = () => {
