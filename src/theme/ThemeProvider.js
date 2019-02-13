@@ -8,8 +8,6 @@ const initialState = () => {
   if (isBrowser) {
     const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
 
-    console.log(darkMode)
-
     const userPrefersDarkMode = JSON.parse(
       window.localStorage.getItem('darkMode')
     )

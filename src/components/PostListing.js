@@ -16,16 +16,14 @@ const PostListing = ({
       data: { date, title, description }
     }
   }
-}) => {
-  return (
-    <React.Fragment key={`${uid}`}>
-      <Link to={`/blog/${uid}`}>
-        <PostTitle key={`${uid}-title`}>{title.text}</PostTitle>
-      </Link>
-      <sub>Posted {moment(date).format('LL')}</sub>
-      <p key={`${uid}-subtitle`}>{description}</p>
-    </React.Fragment>
-  )
-}
+}) => (
+  <React.Fragment key={`${uid}`}>
+    <Link to={`/blog/${uid}`}>
+      <PostTitle key={`${uid}-title`}>{title.text}</PostTitle>
+    </Link>
+    <sub>Posted {moment(date).format('LL')}</sub>
+    <p key={`${uid}-subtitle`}>{description}</p>
+  </React.Fragment>
+)
 
 export default PostListing

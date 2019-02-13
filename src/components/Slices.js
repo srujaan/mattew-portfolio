@@ -15,7 +15,6 @@ const Slices = ({ body }) => {
       case 'image':
         return <ImageBlock key={s.id} content={s} />
       case 'quote':
-        console.log(s)
         return <QuoteBlock key={s.id} content={s} />
       default:
         return null
