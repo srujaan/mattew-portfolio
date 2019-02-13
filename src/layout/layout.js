@@ -38,7 +38,7 @@ const Foot = styled.div`
 `
 
 const Layout = ({ children, theme }) => {
-  return (
+  return !window ? null : (
     <Composition template={templateMobile} templateMd={template}>
       {({ Main, Nav, Footer }) => (
         <React.Fragment>
