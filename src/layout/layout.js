@@ -53,7 +53,7 @@ const Layout = ({ children, theme }) => {
             <ContentContainer>{children}</ContentContainer>
           </Main>
           <Nav>
-            <Navigation isMobile={width <= md || !width} />
+            <Navigation isMobile={width <= md} />
           </Nav>
           <Footer>
             <Foot>
