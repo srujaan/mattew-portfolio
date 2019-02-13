@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import { md } from 'styled-bootstrap-responsive-breakpoints'
 import { MenuAltRight } from 'styled-icons/boxicons-regular/MenuAltRight'
+import useWindowWidth from '../hooks/useWindowWidth'
 
 const NavBar = styled.div`
   display: flex;
@@ -57,7 +59,10 @@ const NavLinksContainer = styled.div`
   }
 `
 
-const Navigation = ({ isMobile }) => {
+const Navigation = () => {
+  const width = useWindowWidth()
+  const isMobile = width <= md || !width
+
   const [navExpanded, toggleNavExpand] = useState(false)
 
   const NavLinks = () => (

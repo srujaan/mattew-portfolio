@@ -2,9 +2,7 @@ import React from 'react'
 import styled, { withTheme } from 'styled-components'
 
 import { Composition } from 'atomic-layout'
-import { md } from 'styled-bootstrap-responsive-breakpoints'
 
-import useWindowWidth from '../hooks/useWindowWidth'
 import GlobalStyle from '../theme/GlobalStyle'
 import Navigation from './Navigation'
 
@@ -40,7 +38,6 @@ const Foot = styled.div`
 `
 
 const Layout = ({ children, theme }) => {
-  const width = useWindowWidth()
   return (
     <Composition template={templateMobile} templateMd={template}>
       {({ Main, Nav, Footer }) => (
@@ -53,7 +50,7 @@ const Layout = ({ children, theme }) => {
             <ContentContainer>{children}</ContentContainer>
           </Main>
           <Nav>
-            <Navigation isMobile={width <= md} />
+            <Navigation />
           </Nav>
           <Footer>
             <Foot>
