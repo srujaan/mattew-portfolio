@@ -58,7 +58,7 @@ const NavLinksContainer = styled.div`
 `
 
 const Navigation = ({ isMobile }) => {
-  const [navVisible, toggleNav] = useState(false)
+  const [navExpanded, toggleNavExpand] = useState(false)
 
   const NavLinks = () => (
     <NavLinksContainer>
@@ -84,10 +84,10 @@ const Navigation = ({ isMobile }) => {
       <React.Fragment>
         <MobileNavMenu
           size={48}
-          visible={navVisible}
-          onClick={() => toggleNav(!navVisible)}
+          visible={isMobile}
+          onClick={() => toggleNavExpand(!navExpanded)}
         />
-        <MobileNav visible={navVisible}>{NavLinks()}</MobileNav>
+        <MobileNav visible={navExpanded}>{NavLinks()}</MobileNav>
       </React.Fragment>
     )
   }
