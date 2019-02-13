@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${props => props.theme.colors.background};
     color: ${props => props.theme.colors.text};
     font-family: 'fira-sans-2';
+    font-size: 18px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

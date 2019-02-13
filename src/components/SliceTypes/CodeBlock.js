@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Img from 'gatsby-image'
 
 const CodeBlockContainer = styled.div`
-  max-width: 500px;
+  max-width: 800px;
   margin: 0 auto;
 `
 
