@@ -17,7 +17,7 @@ function useWindowWidth () {
   }
 
   // SSR needs something to return here since no window
-  return 0
+  return false
 }
 
 export default useWindowWidth
