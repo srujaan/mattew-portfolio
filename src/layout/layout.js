@@ -38,7 +38,8 @@ const Foot = styled.div`
 `
 
 const Layout = ({ children, theme }) => {
-  return window === undefined ? null : (
+  const isServer = typeof window === 'undefined'
+  return isServer ? null : (
     <Composition template={templateMobile} templateMd={template}>
       {({ Main, Nav, Footer }) => (
         <React.Fragment>
