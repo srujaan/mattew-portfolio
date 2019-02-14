@@ -11,9 +11,12 @@ const CodeBlockContainer = styled.div`
 
   img {
     width: 100%;
-    background: ${props => props.theme.colors.codeBg};
-    box-shadow: inset 0 0 10px #000000;
-  }
+    background: ${props =>
+    props.theme.colors.name === 'light'
+      ? props.theme.colors.background
+      : props.theme.colors.codeBg};
+    box-shadow: ${props =>
+    props.theme.colors.name === 'light' ? null : 'inset 0 0 10px #000000;'}
 `
 
 const CodeBlock = ({
