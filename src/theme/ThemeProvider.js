@@ -27,8 +27,8 @@ const initialState = () => {
       primary: 'transparent',
       navBg: 'transparent',
       navText: 'transparent',
-      semiDark: 'transparent',
-      codeBg: 'transparent'
+      semiDark: '#44475a',
+      codeBg: '#44475a'
     }
   }
 }
