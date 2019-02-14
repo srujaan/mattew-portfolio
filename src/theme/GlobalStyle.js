@@ -21,6 +21,25 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: ${props => props.theme.colors.primary};
   }
+
+  .text-block span {
+    padding: 2px 5px;
+    font-size: 14px;
+    font-family: 'source-code-pro', monospace;
+    background: ${props => props.theme.colors.text};
+    color: ${props => props.theme.colors.background};
+    border-radius: 5px;
+  }
+
+  .code-block {
+    width: 100%;
+    background: ${props =>
+    props.theme.colors.name === 'dark'
+      ? props.theme.colors.text
+      : 'transparent'};
+    box-shadow: ${props =>
+    props.theme.colors.name === 'dark' ? 'inset 0 0 10px #000000;' : 'none'};
+  }
 `
 
 export default GlobalStyle
