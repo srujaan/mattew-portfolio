@@ -19,44 +19,47 @@ const MobileNavMenu = styled(MenuAltRight)`
   position: fixed;
   top: 0;
   right: 0;
-  color: ${props =>
-    props.visible ? props.theme.colors.text : props.theme.colors.primary};
+  color: ${({ visible, theme: { colors } }) =>
+    visible ? colors.text : colors.primary};
   z-index: 100;
 `
 
 const MobileNav = styled.div`
-  background: ${props => props.theme.colors.navBg};
-  position: fixed;
-  z-index: 90;
-  display: flex;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 200px;
-  border-left: 1px solid ${props => props.theme.colors.navText};
-  justify-content: center;
-  align-items: flex-end;
-  flex-direction: column;
+  ${({ visible, theme: { colors } }) => `
+    background: ${colors.navBg};
+    position: fixed;
+    z-index: 90;
+    display: flex;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 200px;
+    border-left: 1px solid ${colors.navText};
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
 
-  transition: transform 0.3s ease-in-out;
-  transform: translateX(${props => (props.visible ? '0%' : '100%')});
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(${visible ? '0%' : '100%'});
 
-  a {
-    opacity: ${props => (props.visible ? '1' : '0')};
-    transition: opacity 0.3s 0.3s ease-in-out;
-  }
+    a {
+      opacity: ${visible};
+      transition: opacity 0.3s 0.3s ease-in-out;
+    }
+  `}
 `
 
 const NavLinksContainer = styled.div`
+  ${({ theme: { colors } }) => `
   a {
-    color: ${props => props.theme.colors.navText};
+    color: ${colors.navText};
     padding: 10px;
 
     &:hover {
-      color: ${props => props.theme.colors.primary};
-      background: ${props => props.theme.colors.semiDark};
+        color: ${colors.primary};
+        background: ${colors.semiDark};
     }
-  }
+  `}
 `
 
 const Navigation = () => {
