@@ -2,7 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 
+const isBrowser = typeof window !== 'undefined'
+
 const CodeBlockContainer = styled.div`
+  ${isBrowser
+    ? ({ theme: { colors } }) => `
   max-width: 800px;
   width: 100%;
   margin: 0 auto;
@@ -11,12 +15,12 @@ const CodeBlockContainer = styled.div`
 
   img {
     width: 100%;
-    background: ${props =>
-    props.theme.colors.name === 'dark'
-      ? props.theme.colors.semiDark
-      : 'transparent'};
+    background: ${colors.name === 'dark' ? colors.semiDark : 'transparent'};
     box-shadow: ${props =>
-    props.theme.colors.name === 'dark' ? 'inset 0 0 10px #000000;' : 'none'}
+    colors.name === 'dark' ? 'inset 0 0 10px #000000;' : 'none'}
+
+`
+    : null}
 `
 
 const CodeBlock = ({
