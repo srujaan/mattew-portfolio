@@ -2,17 +2,13 @@ import React from 'react'
 import Layout from '../layout/layout'
 import styled from 'styled-components'
 
-const BrandContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  top: translatex(50%);
-  margin-top: 10vh;
-`
+import { md } from 'styled-bootstrap-responsive-breakpoints'
+
+import Container from '../layout/Container'
 
 const IndexPage = () => (
   <Layout>
-    <BrandContainer>
+    <Container>
       <h1>Hello. My name is Matthew Secrist.</h1>
       <p>
         I’ve never been able to fit myself into a niche, as my interests span
@@ -30,7 +26,7 @@ const IndexPage = () => (
         familiar with AWS services like Lamdba, DynamoDB, API Gateway and S3. I
         am currently available for remote opportunities.
       </p>
-    </BrandContainer>
+    </Container>
   </Layout>
 )
 

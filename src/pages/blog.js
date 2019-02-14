@@ -3,6 +3,8 @@ import Layout from '../layout/layout'
 import { graphql } from 'gatsby'
 import PostListing from '../components/PostListing'
 
+import Container from '../layout/Container'
+
 const BlogPage = ({
   data: {
     allPrismicPost: { edges: posts }
@@ -10,9 +12,11 @@ const BlogPage = ({
 }) => {
   return (
     <Layout>
-      {posts.map(post => (
-        <PostListing post={post} />
-      ))}
+      <Container>
+        {posts.map(post => (
+          <PostListing post={post} />
+        ))}
+      </Container>
     </Layout>
   )
 }

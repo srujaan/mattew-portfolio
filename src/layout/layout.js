@@ -20,7 +20,7 @@ const templateMobile = `
 `
 
 const ContentContainer = styled.div`
-  padding: 10vw;
+  padding: 2vw;
 `
 
 const ThemeToggle = styled.span`
@@ -32,9 +32,7 @@ const ThemeToggle = styled.span`
 const Foot = styled.div`
   padding: 1em;
   font-size: 0.75em;
-  background: ${props => props.theme.primary};
   text-align: center;
-  color: ${props => props.theme.background};
 `
 
 const Layout = ({ children, theme }) => {
@@ -44,7 +42,7 @@ const Layout = ({ children, theme }) => {
         <React.Fragment>
           <GlobalStyle />
           <ThemeToggle onClick={() => theme.toggleTheme()}>
-            Toggle Theme
+            {theme.colors.name === 'dark' ? 'Light Mode' : 'Dark Mode'}
           </ThemeToggle>
           <Main>
             <ContentContainer>{children}</ContentContainer>
