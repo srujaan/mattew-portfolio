@@ -6,8 +6,8 @@ const TextContainer = styled.div`
     padding: 2px 5px;
     font-size: 14px;
     font-family: 'source-code-pro', monospace;
-    background: ${props => props.theme.colors.text};
-    color: ${props => props.theme.colors.background};
+    background: ${props => props.theme.colors.semiDark};
+    color: ${props => props.theme.colors.primary};
     border-radius: 5px;
   }
 

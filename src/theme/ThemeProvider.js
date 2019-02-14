@@ -2,18 +2,9 @@ import React, { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { dark, light } from './colors'
 
-// const isBrowser = typeof window !== 'undefined'
+const isBrowser = typeof window !== 'undefined'
 
 const initialState = () => {
-  /*
-  I really like the idea of saving the user's preference,
-  but as of right now, I don't see a way to do it without
-  a giant flash of one of the colors on initial render.
-
-  As such, we'll just comment this stuff out and return light
-
-  TODO: FIX ME.
-
   if (isBrowser) {
     const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
 
@@ -30,16 +21,16 @@ const initialState = () => {
 
   return {
     colors: {
-      background: '#ffffff',
-      text: '#ffffff',
-      primary: '#ffffff',
-      navBg: '#ffffff',
-      navText: '#ffffff',
-      semiDark: '#ffffff'
+      name: 'server',
+      background: 'transparent',
+      text: 'transparent',
+      primary: 'transparent',
+      navBg: 'transparent',
+      navText: 'transparent',
+      semiDark: 'transparent',
+      codeBg: 'transparent'
     }
   }
-  */
-  return light
 }
 
 const Theme = ({ children, props }) => {
@@ -47,11 +38,10 @@ const Theme = ({ children, props }) => {
 
   const toggleTheme = () => {
     let darkMode = theme === dark
-    /*
-    TODO: FIX ME
+
     if (isBrowser) {
       window.localStorage.setItem('darkMode', !darkMode)
-    } */
+    }
     setTheme(darkMode ? light : dark)
   }
 
