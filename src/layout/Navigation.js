@@ -20,7 +20,7 @@ const MobileNavMenu = styled(MenuAltRight)`
   top: 0;
   right: 0;
   color: ${props =>
-    props.visible ? props.theme.colors.semiDark : props.theme.colors.primary};
+    props.visible ? props.theme.colors.text : props.theme.colors.primary};
   z-index: 100;
 `
 
@@ -90,7 +90,7 @@ const Navigation = () => {
       <React.Fragment>
         <MobileNavMenu
           size={48}
-          visible={isMobile}
+          visible={!navExpanded}
           onClick={() => toggleNavExpand(!navExpanded)}
         />
         <MobileNav visible={navExpanded}>{NavLinks()}</MobileNav>
