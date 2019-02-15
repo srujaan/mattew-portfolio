@@ -31,15 +31,7 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 5px;
   }
 
-  .code-block {
-    width: 100%;
-    background: ${props =>
-    props.theme.colors.name === 'dark'
-      ? props.theme.colors.text
-      : 'transparent'};
-    box-shadow: ${props =>
-    props.theme.colors.name === 'dark' ? 'inset 0 0 10px #000000;' : 'none'};
-  }
+  
 `
 
 export default GlobalStyle

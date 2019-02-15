@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useLayoutEffect, useEffect } from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 
@@ -8,6 +8,16 @@ const CodeBlockContainer = styled.div`
   margin: 0 auto;
   margin-top: 50px;
   margin-bottom: 50px;
+
+  img {
+    width: 100%;
+    background: ${props =>
+    props.theme.colors.name === 'dark'
+      ? props.theme.colors.text
+      : 'transparent'};
+    box-shadow: ${props =>
+    props.theme.colors.name === 'dark' ? 'inset 0 0 10px #000000;' : 'none'};
+  }
 `
 
 const CodeBlock = ({
@@ -20,10 +30,14 @@ const CodeBlock = ({
       }
     }
   }
-}) => (
-  <CodeBlockContainer>
-    <Img className='code-block' fluid={fluid} alt='code_block' />
-  </CodeBlockContainer>
-)
+}) => {
+  const [mounted, didMount] = useState(false)
+  useEffect(() => didMount(true))
+  return (
+    <CodeBlockContainer mounted>
+      <Img className='code-block' fluid={fluid} alt='code_block' />
+    </CodeBlockContainer>
+  )
+}
 
 export default CodeBlock
