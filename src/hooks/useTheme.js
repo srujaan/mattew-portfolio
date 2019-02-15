@@ -33,7 +33,7 @@ const initialState = () => {
 }
 
 const useTheme = () => {
-  const [theme, switchTheme] = useState(light)
+  const [theme, switchTheme] = useState(initialState())
 
   useLayoutEffect(() => switchTheme(initialState()))
 
