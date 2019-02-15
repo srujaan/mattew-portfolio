@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { ThemeProvider } from 'styled-components'
+import styled from 'styled-components'
 
 import useTheme from '../hooks/useTheme'
 
@@ -38,36 +38,32 @@ const Foot = styled.div`
 `
 
 const Layout = ({ children }) => {
-  const [theme, toggleTheme] = useTheme()
+  const [toggleTheme] = useTheme()
 
   return (
-    <ThemeProvider theme={theme}>
-      <Composition template={templateMobile} templateMd={template}>
-        {({ Main, Nav, Footer }) => (
-          <React.Fragment>
-            <GlobalStyle />
-            <ThemeToggle onClick={() => toggleTheme()}>
-              {theme.colors.name === 'dark' ? 'Light Mode' : 'Dark Mode'}
-            </ThemeToggle>
-            <Main>
-              <ContentContainer>{children}</ContentContainer>
-            </Main>
-            <Nav>
-              <Navigation />
-            </Nav>
-            <Footer>
-              <Foot>
-                <SocialMediaLinks />
-                Built with <a href='http://www.gatsbyjs.com'>Gatsby</a> and{' '}
-                <a href='http://www.prismic.com'>Prismic</a>.
-                <p>&copy; Copyright 2019, Matthew Secrist</p>
-                <a href='https://github.com/matthewsecrist/v3'>Github</a>
-              </Foot>
-            </Footer>
-          </React.Fragment>
-        )}
-      </Composition>
-    </ThemeProvider>
+    <Composition template={templateMobile} templateMd={template}>
+      {({ Main, Nav, Footer }) => (
+        <React.Fragment>
+          <GlobalStyle />
+          <ThemeToggle onClick={() => toggleTheme()}>Toggle Theme</ThemeToggle>
+          <Main>
+            <ContentContainer>{children}</ContentContainer>
+          </Main>
+          <Nav>
+            <Navigation />
+          </Nav>
+          <Footer>
+            <Foot>
+              <SocialMediaLinks />
+              Built with <a href='http://www.gatsbyjs.com'>Gatsby</a> and{' '}
+              <a href='http://www.prismic.com'>Prismic</a>.
+              <p>&copy; Copyright 2019, Matthew Secrist</p>
+              <a href='https://github.com/matthewsecrist/v3'>Github</a>
+            </Foot>
+          </Footer>
+        </React.Fragment>
+      )}
+    </Composition>
   )
 }
 

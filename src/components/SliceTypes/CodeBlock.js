@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
-import useRerenderOnClient from '../../hooks/useRerenderOnClient'
 
 const CodeBlockContainer = styled.div`
   max-width: 800px;
@@ -12,14 +11,8 @@ const CodeBlockContainer = styled.div`
 
   img {
     width: 100%;
-    background: ${props =>
-    props.mounted && props.theme.colors.name === 'dark'
-      ? props.theme.colors.text
-      : 'transparent'};
-    box-shadow: ${props =>
-    props.mounted && props.theme.colors.name === 'dark'
-      ? 'inset 0 0 10px #000000;'
-      : 'none'};
+    background: var(--codeBg);
+    box-shadow: inset 0 0 10px var(--shadow);
   }
 `
 
@@ -34,9 +27,8 @@ const CodeBlock = ({
     }
   }
 }) => {
-  const mounted = useRerenderOnClient()
   return (
-    <CodeBlockContainer mounted={mounted}>
+    <CodeBlockContainer>
       <Img className='code-block' fluid={fluid} alt='code_block' />
     </CodeBlockContainer>
   )

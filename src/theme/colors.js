@@ -3,9 +3,9 @@ export const dark = {
     name: 'dark',
     background: '#282a36',
     text: '#f8f8f2',
-    primary: '#50fa7b',
+    primary: '#ff5555',
     navBg: '#282a36',
-    navText: '#50fa7b',
+    navText: '#ff5555',
     semiDark: '#44475a',
     codeBg: '#44475a'
   }
@@ -16,8 +16,6 @@ export const light = {
     ...dark.colors,
     name: 'light',
     background: '#f8f8f2',
-    text: '#282a36',
-    primary: '#ff5555',
-    navText: '#ff5555'
+    text: '#282a36'
   }
 }

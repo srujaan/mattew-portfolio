@@ -5,11 +5,7 @@ const BlockQuoteContainer = styled.div`
   blockquote {
     margin: 0 auto;
     padding-left: 1em;
-    border-left: 5px solid ${props => props.theme.colors.primary};
-
-    * {
-      color: ${props => props.theme.colors.text};
-    }
+    border-left: 5px solid var(--primary);
   }
 `
 

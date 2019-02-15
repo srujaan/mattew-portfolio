@@ -5,7 +5,6 @@ import Img from 'gatsby-image'
 const ImgBlockContainer = styled.div`
   max-width: 800px;
   margin: 0 auto;
-  border: 10px solid ${props => props.theme.colors.text};
   border-radius: 10px;
 `
 
