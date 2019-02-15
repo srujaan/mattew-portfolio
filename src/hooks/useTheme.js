@@ -4,11 +4,7 @@ import { light, dark } from '../theme/colors'
 const isBrowser = typeof window !== 'undefined'
 
 const initialState = () => {
-  if (isBrowser) {
-    return window.__theme === 'dark' ? dark : light
-  }
-
-  return light
+  return window.__theme === 'dark' ? dark : light
 }
 
 const useTheme = () => {
