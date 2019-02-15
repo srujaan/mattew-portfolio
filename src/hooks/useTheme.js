@@ -22,12 +22,12 @@ const initialState = () => {
     colors: {
       name: 'server',
       background: 'transparent',
-      text: 'transparent',
-      primary: 'transparent',
-      navBg: 'transparent',
-      navText: 'transparent',
-      semiDark: 'transparent',
-      codeBg: 'transparent'
+      text: 'black',
+      primary: 'black',
+      navBg: 'white',
+      navText: 'black',
+      semiDark: 'black',
+      codeBg: 'black'
     }
   }
 }
