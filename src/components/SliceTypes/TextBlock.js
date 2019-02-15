@@ -10,7 +10,7 @@ const TextContainer = styled.div`
   span {
     padding: 2px 5px;
     font-size: 14px;
-    font-family: 'source-code-pro', monospace;
+    font-family: 'Fira Mono', monospace;
     background: ${props => props.mounted && props.theme.colors.text};
     color: ${props => props.mounted && props.theme.colors.background};
     border-radius: 5px;

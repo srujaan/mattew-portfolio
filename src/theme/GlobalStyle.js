@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:900|Fira+Sans');
+  @import url('https://fonts.googleapis.com/css?family=Fira+Mono|Fira+Sans|Fira+Sans+Extra+Condensed:900');
 
   body {
     background-color: ${props => props.theme.colors.background};
@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1, h2, h3, h4, h5 {
-    font-family: 'Fira Sans Condensed', sans-serif;
+    font-family: 'Fira Mono', sans-serif;
     color: ${props => props.theme.colors.primary};
   }
 

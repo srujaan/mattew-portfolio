@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../layout/layout'
+
 import styled from 'styled-components'
 import { Composition } from 'atomic-layout'
 
