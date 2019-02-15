@@ -12,11 +12,13 @@ const CodeBlockContainer = styled.div`
   img {
     width: 100%;
     background: ${props =>
-    props.theme.colors.name === 'dark'
+    props.mounted && props.theme.colors.name === 'dark'
       ? props.theme.colors.text
       : 'transparent'};
     box-shadow: ${props =>
-    props.theme.colors.name === 'dark' ? 'inset 0 0 10px #000000;' : 'none'};
+    props.mounted && props.theme.colors.name === 'dark'
+      ? 'inset 0 0 10px #000000;'
+      : 'none'};
   }
 `
 
