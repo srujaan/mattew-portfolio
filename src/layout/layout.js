@@ -1,5 +1,7 @@
 import React from 'react'
-import styled, { withTheme } from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
+
+import useTheme from '../hooks/useTheme'
 
 import { Composition } from 'atomic-layout'
 
@@ -35,34 +37,38 @@ const Foot = styled.div`
   text-align: center;
 `
 
-const Layout = ({ children, theme }) => {
+const Layout = ({ children }) => {
+  const [theme, toggleTheme] = useTheme()
+
   return (
-    <Composition template={templateMobile} templateMd={template}>
-      {({ Main, Nav, Footer }) => (
-        <React.Fragment>
-          <GlobalStyle />
-          <ThemeToggle onClick={() => theme.toggleTheme()}>
-            {theme.colors.name === 'dark' ? 'Light Mode' : 'Dark Mode'}
-          </ThemeToggle>
-          <Main>
-            <ContentContainer>{children}</ContentContainer>
-          </Main>
-          <Nav>
-            <Navigation />
-          </Nav>
-          <Footer>
-            <Foot>
-              <SocialMediaLinks />
-              Built with <a href='http://www.gatsbyjs.com'>Gatsby</a> and{' '}
-              <a href='http://www.prismic.com'>Prismic</a>.
-              <p>&copy; Copyright 2019, Matthew Secrist</p>
-              <a href='https://github.com/matthewsecrist/v3'>Github</a>
-            </Foot>
-          </Footer>
-        </React.Fragment>
-      )}
-    </Composition>
+    <ThemeProvider theme={theme}>
+      <Composition template={templateMobile} templateMd={template}>
+        {({ Main, Nav, Footer }) => (
+          <React.Fragment>
+            <GlobalStyle />
+            <ThemeToggle onClick={() => toggleTheme()}>
+              {theme.colors.name === 'dark' ? 'Light Mode' : 'Dark Mode'}
+            </ThemeToggle>
+            <Main>
+              <ContentContainer>{children}</ContentContainer>
+            </Main>
+            <Nav>
+              <Navigation />
+            </Nav>
+            <Footer>
+              <Foot>
+                <SocialMediaLinks />
+                Built with <a href='http://www.gatsbyjs.com'>Gatsby</a> and{' '}
+                <a href='http://www.prismic.com'>Prismic</a>.
+                <p>&copy; Copyright 2019, Matthew Secrist</p>
+                <a href='https://github.com/matthewsecrist/v3'>Github</a>
+              </Foot>
+            </Footer>
+          </React.Fragment>
+        )}
+      </Composition>
+    </ThemeProvider>
   )
 }
 
-export default withTheme(Layout)
+export default Layout
