@@ -89,6 +89,17 @@ export const query = graphql`
               }
             }
           }
+          ... on PrismicPostBodyGif {
+            slice_type
+            id
+            primary {
+              gif {
+                alt
+                copyright
+                url
+              }
+            }
+          }
         }
       }
     }
