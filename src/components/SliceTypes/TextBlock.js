@@ -11,8 +11,8 @@ const TextContainer = styled.div`
     padding: 2px 5px;
     font-size: 14px;
     font-family: 'source-code-pro', monospace;
-    background: ${props => props.theme.colors.text};
-    color: ${props => props.theme.colors.background};
+    background: ${props => props.mounted && props.theme.colors.text};
+    color: ${props => props.mounted && props.theme.colors.background};
     border-radius: 5px;
   }
 `
