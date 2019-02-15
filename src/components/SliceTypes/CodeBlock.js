@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect, useEffect } from 'react'
+import React, { useState, useLayoutEffect } from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 
@@ -32,9 +32,9 @@ const CodeBlock = ({
   }
 }) => {
   const [mounted, didMount] = useState(false)
-  useEffect(() => didMount(true))
+  useLayoutEffect(() => didMount(true))
   return (
-    <CodeBlockContainer mounted>
+    <CodeBlockContainer mounted={mounted}>
       <Img className='code-block' fluid={fluid} alt='code_block' />
     </CodeBlockContainer>
   )
