@@ -1,6 +1,7 @@
-import React, { useState, useLayoutEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
+import useRerenderOnClient from '../../hooks/useRerenderOnClient'
 
 const CodeBlockContainer = styled.div`
   max-width: 800px;
@@ -33,8 +34,7 @@ const CodeBlock = ({
     }
   }
 }) => {
-  const [mounted, didMount] = useState(false)
-  useLayoutEffect(() => didMount(true))
+  const mounted = useRerenderOnClient()
   return (
     <CodeBlockContainer mounted={mounted}>
       <Img className='code-block' fluid={fluid} alt='code_block' />

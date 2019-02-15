@@ -22,14 +22,7 @@ const GlobalStyle = createGlobalStyle`
     color: ${props => props.theme.colors.primary};
   }
 
-  .text-block span {
-    padding: 2px 5px;
-    font-size: 14px;
-    font-family: 'source-code-pro', monospace;
-    background: ${props => props.theme.colors.text};
-    color: ${props => props.theme.colors.background};
-    border-radius: 5px;
-  }
+
 
   
 `
