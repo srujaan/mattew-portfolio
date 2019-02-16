@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
-  @import url("https://use.typekit.net/jhn5itl.css");
+  @import url('https://use.typekit.net/jhn5itl.css');
 
   body {
     --bg: #f8f8f2;
@@ -11,30 +11,35 @@ const GlobalStyle = createGlobalStyle`
     --navBg: #282a36;
     --navText: #f8f8f2;
     --semiDark: #44475a;
-    --codeBg: #f8f8f2; 
-
-    --header-font: fira-sans-compressed;
-    --body-font: fira-sans-2;
-    --code-font: source-code-pro;
+    --codeBg: transparent;
 
     &.dark {
       --bg: #282a36;
       --text: #f8f8f2;
       --primary: #50fa7b;
       --shadow: #000000;
+      --codeBg: var(--semiDark)
     }
 
     background-color: var(--bg);
     color: var(--text);
 
-    font-family: var(--body-font), sans-serif;
-    font-size: 1.25em;
+    font-family: 'fira-sans-2', sans-serif;
+    font-size: 20px;
+    font-variant-ligatures: common-ligatures;
+    font-variant-numeric: slashed-zero;
+
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern", "ss01";
+    font-kerning: normal;
+
+    line-height: 1.1em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5 {
-    font-family: var(--header-font), sans-serif;
+    font-family: 'fira-sans-compressed', sans-serif;
     color: var(--primary);
   }
 
