@@ -4,6 +4,10 @@ const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Fira+Mono|Fira+Sans|Fira+Sans+Extra+Condensed:900');
 
   body {
+    --bg: #f8f8f2;
+    --text: #282a36;   
+    --primary: #ff5555;  
+    --shadow: transparent;
     --navBg: #282a36;
     --navText: #f8f8f2;
     --semiDark: #44475a;
@@ -14,13 +18,6 @@ const GlobalStyle = createGlobalStyle`
       --text: #f8f8f2;
       --primary: #50fa7b;
       --shadow: #000000;
-    }
-
-    &.light {
-      --bg: #f8f8f2;
-      --text: #282a36;   
-      --primary: #ff5555;  
-      --shadow: transparent;
     }
 
     background-color: var(--bg);

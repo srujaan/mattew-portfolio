@@ -16,13 +16,14 @@ const MobileNavMenu = styled(MenuAltRight)`
 `
 
 const NavMenu = styled.div`
+  top: 0;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  display: flex;
+  height: 100vh;
+
   @media screen and (min-width: ${md}px) {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    flex-direction: column;
-    top: 0;
-    height: 100vh;
     position: sticky;
   }
 
@@ -30,15 +31,9 @@ const NavMenu = styled.div`
     background: var(--navBg);
     position: fixed;
     z-index: 90;
-    display: flex;
-    top: 0;
     right: 0;
-    bottom: 0;
     width: 200px;
     border-left: 1px solid var(--primary);
-    justify-content: center;
-    align-items: flex-end;
-    flex-direction: column;
 
     transition: transform 0.3s ease-in-out;
     transform: translateX(${props => (props.visible ? '0%' : '100%')});
