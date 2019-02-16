@@ -10,8 +10,6 @@ import Navigation from './Navigation'
 
 import SocialMediaLinks from '../components/socialMediaLinks'
 
-import { Moon, Sun } from 'styled-icons/boxicons-solid'
-
 const template = `
   main nav
   footer footer
