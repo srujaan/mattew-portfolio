@@ -14,6 +14,7 @@ export default function HTML (props) {
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
+        // Borrowed from Dan Abramov
         <script
           dangerouslySetInnerHTML={{
             __html: `

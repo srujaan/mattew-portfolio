@@ -46,16 +46,16 @@ const NavMenu = styled.div`
 `
 
 const NavLinksContainer = styled.div`
-
   a {
     color: var(--primary);
     padding: 10px;
 
     &:hover {
-        color: var(--navText);
-        background: var(--semiDark);
+      color: var(--navText);
+      background: var(--semiDark);
     }
-  `
+  }
+`
 
 const Navigation = () => {
   const [navExpanded, toggleNavExpand] = useState(false)
