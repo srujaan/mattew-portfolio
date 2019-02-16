@@ -2,9 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 
 const GifBlockContainer = styled.div`
-  max-width: 800px;
+  max-width: 300px;
   margin: 0 auto;
   border-radius: 10px;
+
+  img {
+    max-width: 100%;
+  }
 `
 
 const GifBlock = ({
@@ -16,7 +20,7 @@ const GifBlock = ({
 }) => {
   return (
     <GifBlockContainer>
-      <img src={url} width='100%' />
+      <img src={url} />
     </GifBlockContainer>
   )
 }

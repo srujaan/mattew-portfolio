@@ -13,7 +13,6 @@ const SliceContainer = styled.div`
 
 const Slices = ({ body }) => {
   const slices = body.map(s => {
-    console.log(s.slice_type)
     switch (s.slice_type) {
       case 'text':
         return <TextBlock key={s.id} content={s} />

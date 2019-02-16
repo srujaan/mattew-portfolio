@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import useTheme from '../hooks/useTheme'
-
 import { Composition } from 'atomic-layout'
+
+import useTheme from '../hooks/useTheme'
 
 import GlobalStyle from '../theme/GlobalStyle'
 import Navigation from './Navigation'

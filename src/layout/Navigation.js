@@ -101,7 +101,7 @@ const Navigation = () => {
     return <NavBar>{NavLinks()}</NavBar>
   }
 
-  return isServer ? null : isMobile ? mobileNav() : Nav()
+  return isServer ? Nav() : isMobile ? mobileNav() : Nav()
 }
 
 export default Navigation
