@@ -61,7 +61,6 @@ const NavLinksContainer = styled.div`
 const Navigation = () => {
   const width = useWindowWidth()
   const isMobile = width <= md
-  const isServer = typeof window === 'undefined'
 
   const [navExpanded, toggleNavExpand] = useState(false)
 
@@ -84,6 +83,7 @@ const Navigation = () => {
       </h2>
     </NavLinksContainer>
   )
+
   const mobileNav = () => {
     return (
       <React.Fragment>
@@ -101,7 +101,7 @@ const Navigation = () => {
     return <NavBar>{NavLinks()}</NavBar>
   }
 
-  return isServer ? Nav() : isMobile ? mobileNav() : Nav()
+  return isMobile ? mobileNav() : Nav()
 }
 
 export default Navigation
