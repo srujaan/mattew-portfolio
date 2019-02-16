@@ -6,6 +6,7 @@ export default function HTML (props) {
   return (
     <html {...props.htmlAttributes}>
       <head>
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
         <meta charSet='utf-8' />
         <meta httpEquiv='x-ua-compatible' content='ie=edge' />
         <meta

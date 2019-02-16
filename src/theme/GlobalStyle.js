@@ -24,7 +24,7 @@ const GlobalStyle = createGlobalStyle`
     color: var(--text);
 
     font-family: 'Fira Sans', sans-serif;
-    font-size: 18px;
+    font-size: 1.25em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
