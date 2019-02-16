@@ -16,12 +16,12 @@ const useTheme = () => {
     let inverseTheme = darkMode ? 'light' : 'dark'
 
     if (isBrowser) {
-      window.__setPreferredTheme(inverseTheme)
+      window.__changeTheme(inverseTheme)
     }
     switchTheme(darkMode ? 'light' : 'dark')
   }
 
-  return [toggleTheme]
+  return [theme, toggleTheme]
 }
 
 export default useTheme

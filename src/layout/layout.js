@@ -10,6 +10,8 @@ import Navigation from './Navigation'
 
 import SocialMediaLinks from '../components/socialMediaLinks'
 
+import { Moon, Sun } from 'styled-icons/boxicons-solid'
+
 const template = `
   main nav
   footer footer
@@ -38,14 +40,24 @@ const Foot = styled.div`
 `
 
 const Layout = ({ children }) => {
-  const [toggleTheme] = useTheme()
+  const [theme, toggleTheme] = useTheme()
 
   return (
     <Composition template={templateMobile} templateMd={template}>
       {({ Main, Nav, Footer }) => (
         <React.Fragment>
           <GlobalStyle />
-          <ThemeToggle onClick={() => toggleTheme()}>Toggle Theme</ThemeToggle>
+          <ThemeToggle onClick={() => toggleTheme()}>
+            {theme === 'dark' ? (
+              <span>
+                <Sun size='18' />
+              </span>
+            ) : (
+              <span>
+                <Moon size='18' />
+              </span>
+            )}
+          </ThemeToggle>
           <Main>
             <ContentContainer>{children}</ContentContainer>
           </Main>
