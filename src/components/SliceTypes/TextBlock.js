@@ -9,7 +9,7 @@ const TextContainer = styled.div`
   span {
     padding: 2px 5px;
     font-size: 14px;
-    font-family: 'Fira Mono', monospace;
+    font-family: var(--code-font), monospace;
     background: var(--text);
     color: var(--bg);
     border-radius: 5px;

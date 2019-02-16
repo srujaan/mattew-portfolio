@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Fira+Mono|Fira+Sans|Fira+Sans+Extra+Condensed:900');
+  @import url("https://use.typekit.net/jhn5itl.css");
 
   body {
     --bg: #f8f8f2;
@@ -13,6 +13,10 @@ const GlobalStyle = createGlobalStyle`
     --semiDark: #44475a;
     --codeBg: #f8f8f2; 
 
+    --header-font: fira-sans-compressed;
+    --body-font: fira-sans-2;
+    --code-font: source-code-pro;
+
     &.dark {
       --bg: #282a36;
       --text: #f8f8f2;
@@ -23,14 +27,14 @@ const GlobalStyle = createGlobalStyle`
     background-color: var(--bg);
     color: var(--text);
 
-    font-family: 'Fira Sans', sans-serif;
+    font-family: var(--body-font), sans-serif;
     font-size: 1.25em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5 {
-    font-family: 'Fira Mono', sans-serif;
+    font-family: var(--header-font), sans-serif;
     color: var(--primary);
   }
 
