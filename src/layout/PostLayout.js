@@ -5,7 +5,10 @@ import { graphql } from 'gatsby'
 
 import Slices from '../components/Slices'
 
-const PostContainer = styled.div``
+const PostContainer = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+`
 
 const PostLayout = ({
   data: {

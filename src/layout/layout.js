@@ -41,7 +41,11 @@ const Layout = ({ children }) => {
   const [toggleTheme] = useTheme()
 
   return (
-    <Composition template={templateMobile} templateMd={template}>
+    <Composition
+      template={templateMobile}
+      templateMd={template}
+      templateCols={`1fr`}
+    >
       {({ Main, Nav, Footer }) => (
         <React.Fragment>
           <GlobalStyle />

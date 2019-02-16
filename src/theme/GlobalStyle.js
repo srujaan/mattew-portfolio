@@ -1,6 +1,12 @@
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+  
   body {
     --bg: #f8f8f2;
     --text: #282a36;   
