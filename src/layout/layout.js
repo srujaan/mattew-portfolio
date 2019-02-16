@@ -47,17 +47,7 @@ const Layout = ({ children }) => {
       {({ Main, Nav, Footer }) => (
         <React.Fragment>
           <GlobalStyle />
-          <ThemeToggle onClick={() => toggleTheme()}>
-            {theme === 'dark' ? (
-              <span>
-                <Sun size='18' />
-              </span>
-            ) : (
-              <span>
-                <Moon size='18' />
-              </span>
-            )}
-          </ThemeToggle>
+          <ThemeToggle onClick={() => toggleTheme()}>Change Theme</ThemeToggle>
           <Main>
             <ContentContainer>{children}</ContentContainer>
           </Main>

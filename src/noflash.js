@@ -21,5 +21,5 @@ const noflash = `
 
   __changeTheme(userPrefersDarkMode || userSetDarkMode ? 'dark' : 'light')
 })();
-              `
+`
 export default noflash
