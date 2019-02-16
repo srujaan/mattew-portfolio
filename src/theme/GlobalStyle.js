@@ -24,13 +24,15 @@ const GlobalStyle = createGlobalStyle`
     background-color: var(--bg);
     color: var(--text);
 
-    font-family: 'fira-sans-2', sans-serif;
+    font-family: fira-sans-2, sans-serif;
+    font-weight: 600;
+    font-style: normal;
     font-size: 20px;
     font-variant-ligatures: common-ligatures;
     font-variant-numeric: slashed-zero;
 
     text-rendering: optimizeLegibility;
-    font-feature-settings: "kern", "ss01";
+    font-feature-settings: "kern", "liga";
     font-kerning: normal;
 
     line-height: 1.1em;
@@ -39,7 +41,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1, h2, h3, h4, h5 {
-    font-family: 'fira-sans-compressed', sans-serif;
+    font-family: fira-sans-compressed, sans-serif;
+    font-weight: 900;
+    font-style: normal;
     color: var(--primary);
   }
 
