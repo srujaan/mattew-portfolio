@@ -6,12 +6,6 @@ export default function HTML (props) {
   return (
     <html {...props.htmlAttributes}>
       <head>
-        <link
-          rel='preload'
-          href='https://use.typekit.net/jhn5itl.css'
-          as='style'
-          crossOrigin="true"
-        />
         <meta charSet='utf-8' />
         <meta httpEquiv='x-ua-compatible' content='ie=edge' />
         <meta

@@ -1,8 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://use.typekit.net/jhn5itl.css');
-
   body {
     --bg: #f8f8f2;
     --text: #282a36;   

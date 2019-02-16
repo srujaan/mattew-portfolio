@@ -24,6 +24,14 @@ module.exports = {
         linkResolver: ({ node, key, value }) => post => `/blog/${post.uid}`
       }
     },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        typekit: {
+          id: 'jhn5itl'
+        }
+      }
+    },
     `gatsby-plugin-netlify`
   ]
 }
