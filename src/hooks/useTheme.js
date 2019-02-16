@@ -21,7 +21,7 @@ const useTheme = () => {
     switchTheme(darkMode ? 'light' : 'dark')
   }
 
-  return [theme, toggleTheme]
+  return [toggleTheme]
 }
 
 export default useTheme

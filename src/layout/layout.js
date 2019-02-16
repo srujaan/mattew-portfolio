@@ -40,7 +40,7 @@ const Foot = styled.div`
 `
 
 const Layout = ({ children }) => {
-  const [theme, toggleTheme] = useTheme()
+  const [toggleTheme] = useTheme()
 
   return (
     <Composition template={templateMobile} templateMd={template}>
