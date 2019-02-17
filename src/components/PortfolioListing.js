@@ -55,13 +55,19 @@ const Card = styled.div`
   }
 `
 
-const PortfolioListing = ({ img }) => {
+const PortfolioListing = ({
+  project: {
+    node: {
+      data: { title, description, project_image }
+    }
+  }
+}) => {
   return (
-    <Card img={img}>
+    <Card img={project_image.localFile.childImageSharp.fixed.src}>
       <div className='card-overlay'>
         <div className='card-details'>
-          <h1>Project Title</h1>
-          <p>Lorem ipsum dolar set.</p>
+          <h1>{title.text}</h1>
+          <p>{description.text}</p>
           <a>View Project</a>
         </div>
       </div>

@@ -3,7 +3,7 @@ import Layout from '../layout/layout'
 import styled from 'styled-components'
 import PortfolioListing from '../components/PortfolioListing'
 
-import { times } from 'underscore'
+import { graphql } from 'gatsby'
 
 const ITEMS_COUNT = 6
 
@@ -25,15 +25,19 @@ const Panel = styled.div`
   width: 300px;
 `
 
-const PortfolioPage = () => {
+const PortfolioPage = ({
+  data: {
+    allPrismicProject: { edges: projects }
+  }
+}) => {
   return (
     <Layout>
       <h1>Portfolio</h1>
       <PortfolioContainer>
-        <GridWrapper itemsCount={ITEMS_COUNT}>
-          {times(ITEMS_COUNT, () => (
+        <GridWrapper>
+          {projects.map(project => (
             <Panel>
-              <PortfolioListing img='https://source.unsplash.com/random/300x$300' />
+              <PortfolioListing key={project.node.id} project={project} />
             </Panel>
           ))}
         </GridWrapper>
@@ -43,3 +47,33 @@ const PortfolioPage = () => {
 }
 
 export default PortfolioPage
+
+export const pageQuery = graphql`
+  {
+    allPrismicProject {
+      edges {
+        node {
+          id
+          uid
+          data {
+            title {
+              text
+            }
+            description {
+              text
+            }
+            project_image {
+              localFile {
+                childImageSharp {
+                  fixed(width: 300, height: 300) {
+                    ...GatsbyImageSharpFixed_withWebp_noBase64
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
