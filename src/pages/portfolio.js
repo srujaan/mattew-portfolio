@@ -5,7 +5,7 @@ import PortfolioListing from '../components/PortfolioListing'
 
 import { times } from 'underscore'
 
-const ITEMS_COUNT = 8
+const ITEMS_COUNT = 6
 
 const PortfolioContainer = styled.div``
 
@@ -19,7 +19,6 @@ const GridWrapper = styled.div`
 `
 
 const Panel = styled.div`
-  background: darkgray;
   margin-left: 5px;
   margin-right: 5px;
   height: 300px;
@@ -34,7 +33,7 @@ const PortfolioPage = () => {
         <GridWrapper itemsCount={ITEMS_COUNT}>
           {times(ITEMS_COUNT, () => (
             <Panel>
-              <PortfolioListing />
+              <PortfolioListing img='https://source.unsplash.com/random/300x$300' />
             </Panel>
           ))}
         </GridWrapper>
