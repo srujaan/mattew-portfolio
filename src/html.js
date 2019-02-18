@@ -12,7 +12,12 @@ export default function HTML (props) {
           name='viewport'
           content='width=device-width, initial-scale=1, shrink-to-fit=no'
         />
-        {props.headComponents}
+        <link
+          rel='preconnect'
+          href='https://fonts.gstatic.com/'
+          crossOrigin
+        />
+        >{props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
         <script
