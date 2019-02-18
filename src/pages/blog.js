@@ -14,7 +14,7 @@ const BlogPage = ({
     <Layout>
       <Container>
         {posts.map(post => (
-          <PostListing post={post} />
+          <PostListing key={post.node.id} post={post} />
         ))}
       </Container>
     </Layout>
@@ -28,6 +28,7 @@ export const pageQuery = graphql`
     allPrismicPost(sort: { fields: [data___date], order: DESC }) {
       edges {
         node {
+          id
           uid
           data {
             date
