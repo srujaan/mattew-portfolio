@@ -20,6 +20,14 @@ const SocialMediaContainer = styled.div`
   align-content: center;
   flex-wrap: wrap;
   max-width: 300px;
+
+  a {
+    svg {
+      &:hover {
+        fill: var(--semiDark);
+      }
+    }
+  }
 `
 const SocialMediaLinks = () => (
   <StaticQuery
@@ -51,9 +59,6 @@ const SocialMediaLinks = () => (
           </Link>
           <Link href={linkedin} alt='LinkedIn' aria-label='Link to Linked In'>
             <Linkedin size={ICON_SIZE} />
-          </Link>
-          <Link href={codepen} alt='Codepen' aria-label='Link to Code Pen'>
-            <Codepen size={ICON_SIZE} />
           </Link>
           <Link
             href={`mailto:${email}`}
