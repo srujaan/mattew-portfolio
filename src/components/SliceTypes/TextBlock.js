@@ -7,13 +7,8 @@ const TextContainer = styled.div`
   word-wrap: break-word;
 
   span {
-    font-family: source-code-pro, monospace;
-    font-weight: 400;
+    font-family: 'IBM Plex Mono', monospace;
     font-style: normal;
-    font-variant-ligatures: common-ligatures;
-    -moz-font-feature-settings: 'liga';
-    -webkit-font-feature-settings: 'liga';
-    font-feature-settings: 'liga' on;
     padding: 2px 5px;
     font-size: 14px;
     background: var(--text);

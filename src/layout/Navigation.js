@@ -49,6 +49,7 @@ const NavLinksContainer = styled.div`
   a {
     color: var(--primary);
     padding: 10px;
+    transition: color 0.3s ease-in-out;
 
     &:hover {
       color: var(--navText);

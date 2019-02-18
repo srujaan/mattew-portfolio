@@ -28,16 +28,13 @@ const GlobalStyle = createGlobalStyle`
     background-color: var(--bg);
     color: var(--text);
 
-    font-family: industry, sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 400;
     font-style: normal;
 
     font-size: 20px;
-    font-variant-ligatures: common-ligatures;
-    font-variant-numeric: slashed-zero;
 
     text-rendering: optimizeLegibility;
-    font-feature-settings: "liga" on, "salt" on, "ss01" on, "ss02" on;
     font-kerning: normal;
 
     -webkit-font-smoothing: antialiased;
@@ -45,10 +42,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1, h2, h3, h4, h5 {
-    font-family: factoria, serif;
-    font-weight: 900;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
     font-style: normal;
-    font-feature-settings: "liga" on, "salt" on, "ss01" on, "ss02" on;
     color: var(--primary);
   }
 

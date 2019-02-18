@@ -13,7 +13,6 @@ const SuperText = styled.h1`
   font-size: 20vw;
   padding: 0;
   margin: 0;
-  text-decoration: underline;
   &::after {
     content: '!';
     color: var(--text);
@@ -34,7 +33,7 @@ const IndexPage = ({
 }) => (
   <Layout>
     <Container>
-      <SuperText>Hello</SuperText>
+      <SuperText>hello</SuperText>
       <h1>{title.text}</h1>
       <BodyContainer dangerouslySetInnerHTML={{ __html: body.html }} />
       <RecentPostsContainer>
