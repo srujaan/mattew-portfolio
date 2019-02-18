@@ -4,6 +4,7 @@ import Layout from './layout'
 import { graphql } from 'gatsby'
 
 import Slices from '../components/Slices'
+import GoBack from '../components/GoBack'
 
 const PostContainer = styled.div`
   max-width: 1200px;
@@ -19,6 +20,7 @@ const PostLayout = ({
 }) => {
   return (
     <Layout>
+      <GoBack to='/blog' name='Blog' />
       <PostContainer>
         <h1>{title.text}</h1>
         <Slices body={body} />

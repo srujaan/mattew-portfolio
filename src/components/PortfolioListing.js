@@ -4,12 +4,16 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 
 const Card = styled.div`
-  background: url(${props => props.img});
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.65) 100%
+    ),
+    url(${props => props.img});
   height: 300px;
   width: 300px;
   background-size: cover;
   overflow: hidden;
-  filter: grayscale(100%) brightness(0.7) contrast(1.1);
 
   & > .card-overlay {
     background: rgba(0, 0, 0, 0.7);
@@ -49,7 +53,6 @@ const Card = styled.div`
   }
 
   &:hover {
-    filter: grayscale(0);
     box-shadow: 0 0 20px #000000;
     & > .card-overlay {
       opacity: 1;

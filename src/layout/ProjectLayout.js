@@ -1,13 +1,11 @@
 import React from 'react'
 import Layout from './layout'
-import { Link } from 'gatsby'
+import GoBack from '../components/GoBack'
 
 const ProjectLayout = () => {
   return (
     <Layout>
-      <h4>
-        <Link to='/portfolio'> {`< All Projects`}</Link>
-      </h4>
+      <GoBack to='/portfolio' name='Portfolio' />
       <h1>Hello!</h1>
     </Layout>
   )
