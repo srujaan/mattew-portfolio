@@ -3,7 +3,7 @@ const path = require('path')
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const pages = await graphql(`
+  const blogPosts = await graphql(`
     {
       allPrismicPost {
         edges {
@@ -15,12 +15,36 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  const template = path.resolve('src/layout/PostLayout.js')
+  const blogTemplate = path.resolve('src/layout/PostLayout.js')
 
-  pages.data.allPrismicPost.edges.forEach(edge => {
+  blogPosts.data.allPrismicPost.edges.forEach(edge => {
     createPage({
       path: `/blog/${edge.node.uid}`,
-      component: template,
+      component: blogTemplate,
+      context: {
+        uid: edge.node.uid
+      }
+    })
+  })
+
+  const portfolioPages = await graphql(`
+    {
+      allPrismicProject {
+        edges {
+          node {
+            uid
+          }
+        }
+      }
+    }
+  `)
+
+  const portfolioTemplate = path.resolve('src/layout/ProjectLayout.js')
+
+  portfolioPages.data.allPrismicProject.edges.forEach(edge => {
+    createPage({
+      path: `/project/${edge.node.uid}`,
+      component: portfolioTemplate,
       context: {
         uid: edge.node.uid
       }

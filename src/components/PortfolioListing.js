@@ -1,6 +1,7 @@
 import React from 'react'
 
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 
 const Card = styled.div`
   background: url(${props => props.img});
@@ -8,10 +9,10 @@ const Card = styled.div`
   width: 300px;
   background-size: cover;
   overflow: hidden;
-  filter: grayscale(100%);
+  filter: grayscale(100%) brightness(0.7) contrast(1.1);
 
   & > .card-overlay {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     position: relative;
     height: 100%;
     left: 0;
@@ -36,6 +37,11 @@ const Card = styled.div`
       transition: all 0.3s ease-in-out 0s;
       opacity: 0;
 
+      & > * {
+        padding: 0;
+        margin: 0;
+      }
+
       p {
         color: white;
       }
@@ -58,17 +64,28 @@ const Card = styled.div`
 const PortfolioListing = ({
   project: {
     node: {
-      data: { title, description, project_image }
+      uid,
+      data: {
+        title,
+        description,
+        project_image: {
+          localFile: {
+            childImageSharp: {
+              fixed: { src }
+            }
+          }
+        }
+      }
     }
   }
 }) => {
   return (
-    <Card img={project_image.localFile.childImageSharp.fixed.src}>
+    <Card img={src}>
       <div className='card-overlay'>
         <div className='card-details'>
-          <h1>{title.text}</h1>
+          <h3>{title.text}</h3>
           <p>{description.text}</p>
-          <a>View Project</a>
+          <Link to={`/project/${uid}`}>View Project</Link>
         </div>
       </div>
     </Card>
