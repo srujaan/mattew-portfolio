@@ -5,8 +5,6 @@ import PortfolioListing from '../components/PortfolioListing'
 
 import { graphql } from 'gatsby'
 
-const ITEMS_COUNT = 6
-
 const PortfolioContainer = styled.div``
 
 const GridWrapper = styled.div`
@@ -36,8 +34,8 @@ const PortfolioPage = ({
       <PortfolioContainer>
         <GridWrapper>
           {projects.map(project => (
-            <Panel>
-              <PortfolioListing key={project.node.id} project={project} />
+            <Panel key={project.node.id}>
+              <PortfolioListing project={project} />
             </Panel>
           ))}
         </GridWrapper>
