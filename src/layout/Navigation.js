@@ -34,14 +34,8 @@ const NavMenu = styled.div`
     right: 0;
     width: 200px;
     border-left: 1px solid var(--primary);
-
     transition: transform 0.3s ease-in-out;
     transform: translateX(${props => (props.visible ? '0%' : '100%')});
-
-    a {
-      opacity: ${props => props.visible};
-      transition: opacity 0.3s 0.3s ease-in-out;
-    }
   }
 `
 
@@ -49,7 +43,6 @@ const NavLinksContainer = styled.div`
   a {
     color: var(--primary);
     padding: 10px;
-    transition: color 0.3s ease-in-out;
 
     &:hover {
       color: var(--navText);

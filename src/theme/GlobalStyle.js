@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     --bg: #f8f8f2;
     --text: #282a36;   
-    --primary: #0f4880;  
+    --primary: #ff4444;  
     --navBg: #282a36;
     --navText: #f8f8f2;
     --semiDark: #44475a;
@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
     &.dark {
       --bg: #282a36;
       --text: #f8f8f2;
-      --primary: #ff5555;
+      --primary: #50fa7b;
       --shadow: #000000;
       --codeBg: var(--semiDark)
     }
@@ -28,14 +28,11 @@ const GlobalStyle = createGlobalStyle`
     background-color: var(--bg);
     color: var(--text);
 
-    transition: color 0.3s ease-in-out;
-    transition: background-color 0.3s ease-in-out;
-
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 400;
     font-style: normal;
 
-    font-size: 20px;
+    font-size: 1.2rem;
 
     text-rendering: optimizeLegibility;
     font-kerning: normal;
@@ -50,10 +47,13 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 700;
     font-style: normal;
     color: var(--primary);
-    transition: color 0.3s ease-in-out;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-smooth: always;
+  }
+
+  h1 {
+    font-size: 2.4rem;
   }
 
   a {

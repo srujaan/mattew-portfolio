@@ -6,7 +6,6 @@ const ProjectLayout = () => {
   return (
     <Layout>
       <GoBack to='/portfolio' name='Portfolio' />
-      <h1>Hello!</h1>
     </Layout>
   )
 }
