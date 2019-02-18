@@ -6,7 +6,22 @@ import Layout from '../layout/layout'
 import Container from '../layout/Container'
 
 const BodyContainer = styled.div`
-  height: 60vh;
+  padding-bottom: 10vh;
+`
+
+const SuperText = styled.h1`
+  font-size: 20vw;
+  padding: 0;
+  margin: 0;
+  text-decoration: underline;
+  &::after {
+    content: '!';
+    color: var(--text);
+  }
+`
+
+const RecentPostsContainer = styled.div`
+  padding: 0 5vw 0 5vw;
 `
 
 const IndexPage = ({
@@ -19,26 +34,29 @@ const IndexPage = ({
 }) => (
   <Layout>
     <Container>
+      <SuperText>Hello</SuperText>
       <h1>{title.text}</h1>
       <BodyContainer dangerouslySetInnerHTML={{ __html: body.html }} />
-      <h2>Recent Posts</h2>
-      {edges.map(edge => {
-        const {
-          node: {
-            id,
-            uid,
-            data: { title, description }
-          }
-        } = edge
-        return (
-          <div key={id}>
-            <Link to={`/blog/${uid}`}>
-              <h3>{title.text}</h3>
-            </Link>
-            <p>{description}</p>
-          </div>
-        )
-      })}
+      <RecentPostsContainer>
+        <h2>Recent Posts</h2>
+        {edges.map(edge => {
+          const {
+            node: {
+              id,
+              uid,
+              data: { title, description }
+            }
+          } = edge
+          return (
+            <div key={id}>
+              <Link to={`/blog/${uid}`}>
+                <h3>{title.text}</h3>
+              </Link>
+              <p>{description}</p>
+            </div>
+          )
+        })}
+      </RecentPostsContainer>
     </Container>
   </Layout>
 )
