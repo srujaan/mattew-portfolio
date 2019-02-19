@@ -20,7 +20,7 @@ const GifBlock = ({
 }) => {
   return (
     <GifBlockContainer>
-      <img src={url} />
+      <img src={url} alt='gif' />
     </GifBlockContainer>
   )
 }

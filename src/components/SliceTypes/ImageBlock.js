@@ -20,7 +20,7 @@ const ImageBlock = ({
   }
 }) => (
   <ImgBlockContainer>
-    <Img fluid={fluid} alt='code_block' />
+    <Img fluid={fluid} alt='image block' />
   </ImgBlockContainer>
 )
 
