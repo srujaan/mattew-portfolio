@@ -31,7 +31,7 @@ const PostLayout = ({
       <PostContainer>
         <h1>{title.text}</h1>
         <p style={{ fontWeight: 'bold' }}>
-          Posted {moment(date).format('MMMM Do YYYY')}
+          {moment(date).format('MMMM Do YYYY')}
         </p>
         <Slices body={body} />
       </PostContainer>
