@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
     --semiDark: #44475a;
     --codeBg: transparent;
     --shadow: transparent;
+    --white: #f8f8f2;
 
     &.dark {
       --bg: #282a36;
