@@ -4,23 +4,10 @@ import styled from 'styled-components'
 import Layout from '../layout/layout'
 
 import Container from '../layout/Container'
+import SuperText from '../components/SuperText'
 
 const BodyContainer = styled.div`
   padding-bottom: 10vh;
-`
-
-const SuperText = styled.h1`
-  font-size: 4.2rem;
-  padding: 0;
-  margin: 0;
-  &::before {
-    content: '<';
-    color: var(--text);
-  }
-  &::after {
-    content: ' />';
-    color: var(--text);
-  }
 `
 
 const RecentPostsContainer = styled.div`
@@ -37,11 +24,11 @@ const IndexPage = ({
 }) => (
   <Layout>
     <Container>
-      <SuperText>Hello</SuperText>
+      <SuperText size='4em'>Hello</SuperText>
       <h1>{title.text}</h1>
       <BodyContainer dangerouslySetInnerHTML={{ __html: body.html }} />
       <RecentPostsContainer>
-        <h2>Recent Posts</h2>
+        <SuperText size='1.5em'>Recent Posts</SuperText>
         {edges.map(edge => {
           const {
             node: {

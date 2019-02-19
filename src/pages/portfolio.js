@@ -2,10 +2,11 @@ import React from 'react'
 import Layout from '../layout/layout'
 import styled from 'styled-components'
 import PortfolioListing from '../components/PortfolioListing'
+import SuperText from '../components/SuperText'
 
 import { graphql } from 'gatsby'
 
-const PortfolioContainer = styled.div``
+import Container from '../layout/Container'
 
 const GridWrapper = styled.div`
   display: grid;
@@ -30,8 +31,8 @@ const PortfolioPage = ({
 }) => {
   return (
     <Layout>
-      <h1>Portfolio</h1>
-      <PortfolioContainer>
+      <Container>
+        <SuperText size='4em'>Portfolio</SuperText>
         <GridWrapper>
           {projects.map(project => (
             <Panel key={project.node.id}>
@@ -39,7 +40,7 @@ const PortfolioPage = ({
             </Panel>
           ))}
         </GridWrapper>
-      </PortfolioContainer>
+      </Container>
     </Layout>
   )
 }
