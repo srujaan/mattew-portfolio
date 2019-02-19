@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import styled from 'styled-components'
+import moment from 'moment'
 import Layout from '../layout/layout'
 
 import Container from '../layout/Container'
@@ -36,7 +37,7 @@ const IndexPage = ({
             node: {
               id,
               uid,
-              data: { title, description }
+              data: { date, title, description }
             }
           } = edge
           return (
@@ -44,6 +45,9 @@ const IndexPage = ({
               <Link to={`/blog/${uid}`}>
                 <h3>{title.text}</h3>
               </Link>
+              <span style={{ fontWeight: 'bold' }}>
+                {moment(date).fromNow()}
+              </span>
               <p>{description}</p>
             </div>
           )
@@ -74,6 +78,7 @@ export const pageQuery = graphql`
           id
           uid
           data {
+            date
             title {
               text
             }
