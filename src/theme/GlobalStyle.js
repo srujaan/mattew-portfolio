@@ -27,6 +27,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     background-color: var(--bg);
+    transition: background-color .3s ease-in-out;
     color: var(--text);
 
     font-family: 'IBM Plex Sans', sans-serif;
