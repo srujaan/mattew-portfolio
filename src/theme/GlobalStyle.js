@@ -55,7 +55,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
 
   a {

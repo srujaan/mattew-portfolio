@@ -111,8 +111,7 @@ export default class Contact extends React.Component {
           pathname='/contact'
         />
         <Container>
-          <SuperText size='2.5em'>Contact</SuperText>
-          <p>Send me a message.</p>
+          <SuperText>Contact</SuperText>
           <Center>
             <form
               name='contact'

@@ -38,7 +38,7 @@ const PortfolioPage = ({
           description='Projects and Images.'
           pathname='/portfolio'
         />
-        <SuperText size='2.5em'>Portfolio</SuperText>
+        <SuperText>Portfolio</SuperText>
         <GridWrapper>
           {projects.map(project => (
             <Panel key={project.node.id}>

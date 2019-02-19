@@ -19,7 +19,7 @@ const FourOhFour = () => {
     <Layout>
       <SEO title='Matthew Secrist' />
       <Center>
-        <SuperText size='3em'>Thanks</SuperText>
+        <SuperText>Thanks</SuperText>
         <p>Thank you for your message, I'll be in contact with you soon.</p>
         <Link to='/'>Go Home</Link>
       </Center>
