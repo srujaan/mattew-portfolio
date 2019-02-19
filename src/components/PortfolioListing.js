@@ -15,7 +15,7 @@ const Card = styled.div`
     width: 100%;
     height: auto;
     display: block;
-    filter: brightness(0.5) contrast(1.2);
+    filter: brightness(0.8) contrast(1.2);
   }
 
   & > .card-overlay {
