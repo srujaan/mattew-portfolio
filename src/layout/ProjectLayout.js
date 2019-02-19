@@ -4,6 +4,7 @@ import Layout from './layout'
 import GoBack from '../components/GoBack'
 import Img from 'gatsby-image'
 import Slices from '../components/Slices'
+import SEO from '../components/SEO'
 
 const ProjectLayout = ({
   data: {
@@ -27,6 +28,11 @@ const ProjectLayout = ({
 }) => {
   return (
     <Layout>
+      <SEO
+        title={`${title.text} - Matthew Secrist`}
+        description={description.text}
+        pathname={`/project/${uid}`}
+      />
       <GoBack to='/portfolio' name='Portfolio' />
       <Img fluid={fluid} />
       <h1>{title.text}</h1>

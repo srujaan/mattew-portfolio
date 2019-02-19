@@ -5,6 +5,7 @@ import { graphql } from 'gatsby'
 
 import Slices from '../components/Slices'
 import GoBack from '../components/GoBack'
+import SEO from '../components/SEO'
 
 const PostContainer = styled.div`
   max-width: 1200px;
@@ -13,6 +14,7 @@ const PostContainer = styled.div`
 
 const PostLayout = ({
   data: {
+    uid,
     prismicPost: {
       data: { body, title, date, description }
     }
@@ -20,6 +22,11 @@ const PostLayout = ({
 }) => {
   return (
     <Layout>
+      <SEO
+        title={`${title.text} - Matthew Secrist`}
+        description={description}
+        pathname={`/blog/${uid}`}
+      />
       <GoBack to='/blog' name='Blog' />
       <PostContainer>
         <h1>{title.text}</h1>

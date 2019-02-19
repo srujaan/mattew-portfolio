@@ -5,6 +5,7 @@ import Layout from '../layout/layout'
 
 import Container from '../layout/Container'
 import SuperText from '../components/SuperText'
+import SEO from '../components/SEO'
 
 const BodyContainer = styled.div`
   padding-bottom: 10vh;
@@ -24,6 +25,7 @@ const IndexPage = ({
 }) => (
   <Layout>
     <Container>
+      <SEO title="Matthew Secrist" />
       <SuperText size='4em'>Hello</SuperText>
       <h1>{title.text}</h1>
       <BodyContainer dangerouslySetInnerHTML={{ __html: body.html }} />

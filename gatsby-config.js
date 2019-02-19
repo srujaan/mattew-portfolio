@@ -6,6 +6,11 @@ const path = require('path')
 
 module.exports = {
   siteMetadata: {
+    title: `Matthew Secrist`,
+    titleTemplate: '%s',
+    siteUrl: `https://www.matthewsecrist.net`,
+    description: `Matthew Secrist - https://www.matthewsecrist.net - Full Stack Web Developer in Boone, Iowa.`,
+    twitterUsername: `@_mattsecrist`,
     twitter: 'https://twitter.com/_mattsecrist',
     github: 'http://www.github.com/matthewsecrist',
     linkedin: 'https://www.linkedin.com/in/matthew-secrist/',
@@ -16,6 +21,7 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-prismic`,
       options: {

@@ -7,6 +7,7 @@ import SuperText from '../components/SuperText'
 import { graphql } from 'gatsby'
 
 import Container from '../layout/Container'
+import SEO from '../components/SEO'
 
 const GridWrapper = styled.div`
   display: grid;
@@ -32,6 +33,11 @@ const PortfolioPage = ({
   return (
     <Layout>
       <Container>
+        <SEO
+          title='Portfolio - Matthew Secrist'
+          description='Projects and Images.'
+          pathname='/portfolio'
+        />
         <SuperText size='4em'>Portfolio</SuperText>
         <GridWrapper>
           {projects.map(project => (

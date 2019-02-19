@@ -5,6 +5,7 @@ import PostListing from '../components/PostListing'
 import SuperText from '../components/SuperText'
 
 import Container from '../layout/Container'
+import SEO from '../components/SEO'
 
 const BlogPage = ({
   data: {
@@ -13,6 +14,11 @@ const BlogPage = ({
 }) => {
   return (
     <Layout>
+      <SEO
+        title='Blog - Matthew Secrist'
+        description='Words and code.'
+        pathname='/blog'
+      />
       <Container>
         <SuperText size='4em'>Blog</SuperText>
         {posts.map(post => (
