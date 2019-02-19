@@ -41,8 +41,17 @@ const Button = styled.button`
   width: 100%;
   height: 50px;
   background: transparent;
-  border: 2px solid var(--text);
-  color: var(--text);
+  border: 2px solid var(--primary);
+  color: var(--primary);
+
+  &:hover {
+    background: var(--text);
+  }
+  &:disabled {
+    background: transparent;
+    border: 2px solid var(--text);
+    color: var(--semiDark);
+  }
 `
 
 function encode (data) {
@@ -51,10 +60,16 @@ function encode (data) {
     .join('&')
 }
 
+const validateLength = (t, len) => t.length > len
+
 export default class Contact extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {}
+    this.state = {
+      name: '',
+      email: '',
+      message: ''
+    }
   }
 
   handleChange = e => {
@@ -64,20 +79,31 @@ export default class Contact extends React.Component {
   handleSubmit = e => {
     e.preventDefault()
     const form = e.target
-    window
-      .fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({
-          'form-name': form.getAttribute('name'),
-          ...this.state
+    const { name, email, message } = this.state
+
+    if (
+      validateLength(name, 3) ||
+      validateLength(email, 3) ||
+      validateLength(message, 10)
+    ) {
+      window
+        .fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: encode({
+            'form-name': form.getAttribute('name'),
+            ...this.state
+          })
         })
-      })
-      .then(() => navigate(form.getAttribute('action')))
-      .catch(error => window.alert(error))
+        .then(() => navigate(form.getAttribute('action')))
+        .catch(error => window.alert(error))
+    } else {
+      window.alert('Looks like you missed something!')
+    }
   }
 
   render () {
+    const { name, email, message } = this.state
     return (
       <Layout>
         <SEO
@@ -106,14 +132,14 @@ export default class Contact extends React.Component {
               </p>
               <p>
                 <Label>
-                  Your name:
+                  Your name (minimim 3 characters):
                   <br />
                   <Input type='text' name='name' onChange={this.handleChange} />
                 </Label>
               </p>
               <p>
                 <Label>
-                  Your email:
+                  Your email (minimim 3 characters):
                   <br />
                   <Input
                     type='email'
@@ -124,13 +150,22 @@ export default class Contact extends React.Component {
               </p>
               <p>
                 <Label>
-                  Message:
+                  Your message (minimim 10 characters):
                   <br />
                   <Input name='message' onChange={this.handleChange} />
                 </Label>
               </p>
               <p>
-                <Button type='submit'>Send</Button>
+                <Button
+                  type='submit'
+                  disabled={
+                    !validateLength(name, 3) ||
+                    !validateLength(email, 3) ||
+                    !validateLength(message, 10)
+                  }
+                >
+                  Send
+                </Button>
               </p>
             </form>
           </Center>
