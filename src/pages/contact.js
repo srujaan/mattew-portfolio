@@ -2,10 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import { navigate } from 'gatsby'
 import Layout from '../layout/layout'
-import Container from '../layout/container'
+import Container from '../layout/Container'
 import SuperText from '../components/SuperText'
 
 import SEO from '../components/SEO'
+
+// borrowed mostly from https://github.com/imorente/gatsby-netlify-form-example/
+// TODO: Make it better.
 
 const Center = styled.div`
   height: 80vh;
@@ -83,7 +86,7 @@ export default class Contact extends React.Component {
           pathname='/blog'
         />
         <Container>
-          <SuperText>Contact</SuperText>
+          <SuperText size='2.5em'>Contact</SuperText>
           <p>Send me a message.</p>
           <Center>
             <form
@@ -94,7 +97,6 @@ export default class Contact extends React.Component {
               data-netlify-honeypot='bot-field'
               onSubmit={this.handleSubmit}
             >
-              {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
               <input type='hidden' name='form-name' value='contact' />
               <p hidden>
                 <label>
