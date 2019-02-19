@@ -54,7 +54,7 @@ exports.createPages = async ({ graphql, actions }) => {
   // Create redirects from old pages to new.
   createRedirect({
     fromPath: '/supprtbot-writeup',
-    toPath: 'project/supprtbot',
+    toPath: '/project/supprtbot',
     isPermanent: true
   })
 
