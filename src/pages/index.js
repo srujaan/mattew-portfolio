@@ -1,12 +1,12 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import styled from 'styled-components'
-import moment from 'moment'
 import Layout from '../layout/layout'
 
 import Container from '../layout/Container'
 import SuperText from '../components/SuperText'
 import SEO from '../components/SEO'
+import PostListing from '../components/PostListing'
 
 const BodyContainer = styled.div`
   padding-bottom: 10vh;
@@ -31,27 +31,9 @@ const IndexPage = ({
       <h1>{title.text}</h1>
       <BodyContainer dangerouslySetInnerHTML={{ __html: body.html }} />
       <RecentPostsContainer>
-        <h2>Recent Posts</h2>
-        {edges.map(edge => {
-          const {
-            node: {
-              id,
-              uid,
-              data: { date, title, description }
-            }
-          } = edge
-          return (
-            <div key={id}>
-              <Link to={`/blog/${uid}`}>
-                <h3>{title.text}</h3>
-              </Link>
-              <span style={{ fontWeight: 'bold' }}>
-                {moment(date).fromNow()}
-              </span>
-              <p>{description}</p>
-            </div>
-          )
-        })}
+        {edges.map(post => (
+          <PostListing key={post.node.id} post={post} />
+        ))}
       </RecentPostsContainer>
     </Container>
   </Layout>

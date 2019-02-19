@@ -1,28 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Composition } from 'atomic-layout'
-
 import useTheme from '../hooks/useTheme'
 
 import GlobalStyle from '../theme/GlobalStyle'
 import Navigation from './Navigation'
+import { md } from 'styled-bootstrap-responsive-breakpoints'
 
 import SocialMediaLinks from '../components/socialMediaLinks'
 
-const template = `
-  main nav
-  footer footer
-`
-
-const templateMobile = `
-  nav
-  main
-  footer
-`
-
 const ContentContainer = styled.div`
   padding: 2vw;
+  padding-right: 250px;
+
+  @media screen and (max-width: ${md}px) {
+    padding-right: 0;
+  }
 `
 
 const ThemeToggle = styled.span`
@@ -41,33 +34,22 @@ const Layout = ({ children }) => {
   const [toggleTheme] = useTheme()
 
   return (
-    <Composition
-      template={templateMobile}
-      templateMd={template}
-      templateCols={`1fr`}
-    >
-      {({ Main, Nav, Footer }) => (
-        <React.Fragment>
-          <GlobalStyle />
-          <ThemeToggle onClick={() => toggleTheme()}>Change Theme</ThemeToggle>
-          <Main>
-            <ContentContainer>{children}</ContentContainer>
-          </Main>
-          <Nav>
-            <Navigation />
-          </Nav>
-          <Footer>
-            <Foot>
-              <SocialMediaLinks />
-              Built with <a href='http://www.gatsbyjs.com'>Gatsby</a> and{' '}
-              <a href='http://www.prismic.com'>Prismic</a>.
-              <p>&copy; Copyright 2019, Matthew Secrist</p>
-              <a href='https://github.com/matthewsecrist/v3'>Github</a>
-            </Foot>
-          </Footer>
-        </React.Fragment>
-      )}
-    </Composition>
+    <React.Fragment>
+      <GlobalStyle />
+      <ThemeToggle onClick={() => toggleTheme()}>Change Theme</ThemeToggle>
+
+      <ContentContainer>{children}</ContentContainer>
+
+      <Navigation />
+
+      <Foot>
+        <SocialMediaLinks />
+        Built with <a href='http://www.gatsbyjs.com'>Gatsby</a> and{' '}
+        <a href='http://www.prismic.com'>Prismic</a>.
+        <p>&copy; Copyright 2019, Matthew Secrist</p>
+        <a href='https://github.com/matthewsecrist/v3'>Github</a>
+      </Foot>
+    </React.Fragment>
   )
 }
 

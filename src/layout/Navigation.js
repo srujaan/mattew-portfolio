@@ -17,18 +17,17 @@ const MobileNavMenu = styled(MenuAltRight)`
 
 const NavMenu = styled.div`
   top: 0;
+  right: 0;
   justify-content: center;
   align-items: flex-end;
   flex-direction: column;
   display: flex;
   height: 100vh;
-
-  @media screen and (min-width: ${md}px) {
-    position: sticky;
-  }
+  width: 200px;
+  background: var(--navBg);
+  position: fixed;
 
   @media screen and (max-width: ${md}px) {
-    background: var(--navBg);
     position: fixed;
     z-index: 90;
     right: 0;
@@ -50,17 +49,11 @@ const NavLinksContainer = styled.div`
   & .active {
     &::before {
       content: '{ ';
-      color: var(--text);
-      @media screen and (max-width: ${md}px) {
-        color: var(--white);
-      }
+      color: var(--white);
     }
     &::after {
       content: ' }';
-      color: var(--text);
-      @media screen and (max-width: ${md}px) {
-        color: var(--white);
-      }
+      color: var(--white);
     }
   }
 `

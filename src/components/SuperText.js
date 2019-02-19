@@ -13,7 +13,7 @@ const SuperText = styled.h1`
     font-size: 5rem;
   }
 
-  padding: 10vh 0 10vh 0;
+  padding: 2vh 0 10vh 0;
   margin: 0;
   &::before {
     content: '<';

@@ -11,7 +11,6 @@ import SEO from '../components/SEO'
 // TODO: Make it better.
 
 const Center = styled.div`
-  height: 80vh;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -63,7 +62,7 @@ function encode (data) {
 
 const validateLength = (t, len) => t.length > len
 
-export default class Contact extends React.Component {
+class ContactPage extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -186,3 +185,5 @@ export default class Contact extends React.Component {
     )
   }
 }
+
+export default ContactPage
