@@ -40,13 +40,32 @@ const NavMenu = styled.div`
 `
 
 const NavLinksContainer = styled.div`
+  text-align: center;
+  width: 200px;
   a {
     color: var(--primary);
-    padding: 10px;
+    padding: 10px 0px 10px 0px;
 
     &:hover {
       color: var(--navText);
       background: var(--semiDark);
+    }
+  }
+
+  & .active {
+    &::before {
+      content: '{ ';
+      color: var(--text);
+      @media screen and (max-width: ${md}px) {
+        color: var(--white);
+      }
+    }
+    &::after {
+      content: ' }';
+      color: var(--text);
+      @media screen and (max-width: ${md}px) {
+        color: var(--white);
+      }
     }
   }
 `
@@ -57,19 +76,27 @@ const Navigation = () => {
   const NavLinks = () => (
     <NavLinksContainer>
       <h2>
-        <Link to='/'>home</Link>
+        <Link to='/' activeClassName='active'>
+          home
+        </Link>
       </h2>
 
       <h2>
-        <Link to='/blog'>blog</Link>
+        <Link to='/blog' activeClassName='active'>
+          blog
+        </Link>
       </h2>
 
       <h2>
-        <Link to='/portfolio'>portfolio</Link>
+        <Link to='/portfolio' activeClassName='active'>
+          portfolio
+        </Link>
       </h2>
 
       <h2>
-        <Link to='/contact'>contact</Link>
+        <Link to='/contact' activeClassName='active'>
+          contact
+        </Link>
       </h2>
     </NavLinksContainer>
   )
