@@ -5,8 +5,8 @@ import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
 const Card = styled.div`
-  height: 300px;
-  width: 300px;
+  height: 100%;
+  width: 100%;
   background-size: cover;
   overflow: hidden;
   position: relative;

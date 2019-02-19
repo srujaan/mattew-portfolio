@@ -20,7 +20,7 @@ const BlogPage = ({
         pathname='/blog'
       />
       <Container>
-        <SuperText size='4em'>Blog</SuperText>
+        <SuperText size='3em'>Blog</SuperText>
         {posts.map(post => (
           <PostListing key={post.node.id} post={post} />
         ))}

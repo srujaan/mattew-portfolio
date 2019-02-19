@@ -20,7 +20,7 @@ const PostListing = ({
     <Link to={`/blog/${uid}`}>
       <PostTitle key={`${uid}-title`}>{title.text}</PostTitle>
     </Link>
-    <sub>Posted {moment(date).format('LL')}</sub>
+    <sub>{moment(date).format('LL')}</sub>
     <p key={`${uid}-subtitle`}>{description}</p>
   </React.Fragment>
 )

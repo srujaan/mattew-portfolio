@@ -12,8 +12,8 @@ import SEO from '../components/SEO'
 const GridWrapper = styled.div`
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(auto-fit, 300px);
-  grid-auto-rows: 300px;
+  grid-template-columns: repeat(auto-fit, 250px);
+  grid-auto-rows: 250px;
   justify-content: center;
   align-items: center;
 `
@@ -21,8 +21,8 @@ const GridWrapper = styled.div`
 const Panel = styled.div`
   margin-left: 5px;
   margin-right: 5px;
-  height: 300px;
-  width: 300px;
+  height: 250px;
+  width: 250px;
 `
 
 const PortfolioPage = ({
@@ -38,7 +38,7 @@ const PortfolioPage = ({
           description='Projects and Images.'
           pathname='/portfolio'
         />
-        <SuperText size='4em'>Portfolio</SuperText>
+        <SuperText size='2.5em'>Portfolio</SuperText>
         <GridWrapper>
           {projects.map(project => (
             <Panel key={project.node.id}>
@@ -70,7 +70,7 @@ export const pageQuery = graphql`
             project_image {
               localFile {
                 childImageSharp {
-                  fixed(width: 300, height: 300) {
+                  fixed(width: 250, height: 250) {
                     ...GatsbyImageSharpFixed_withWebp_noBase64
                   }
                 }
