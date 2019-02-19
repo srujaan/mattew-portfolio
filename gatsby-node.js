@@ -71,7 +71,7 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
   createRedirect({
-    fromPath: '/nomadically-writeup',
+    fromPath: '/nomadically-write-up',
     toPath: '/project/nomadically',
     isPermanent: true
   })
