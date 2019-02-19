@@ -6,6 +6,7 @@ import { graphql } from 'gatsby'
 import Slices from '../components/Slices'
 import GoBack from '../components/GoBack'
 import SEO from '../components/SEO'
+import moment from 'moment'
 
 const PostContainer = styled.div`
   max-width: 1200px;
@@ -15,11 +16,10 @@ const PostContainer = styled.div`
 const PostLayout = ({
   data: {
     uid,
-    prismicPost: {
-      data: { body, title, date, description }
-    }
+    prismicPost: { data }
   }
 }) => {
+  const { body, title, date, description } = data
   return (
     <Layout>
       <SEO
@@ -30,6 +30,9 @@ const PostLayout = ({
       <GoBack to='/blog' name='Blog' />
       <PostContainer>
         <h1>{title.text}</h1>
+        <p style={{ fontWeight: 'bold' }}>
+          Posted {moment(date).format('MMMM Do YYYY')}
+        </p>
         <Slices body={body} />
       </PostContainer>
     </Layout>
@@ -49,7 +52,7 @@ export const query = graphql`
           text
         }
         description
-        date(formatString: "DD.MM.YYYY")
+        date
 
         body {
           ... on PrismicPostBodyText {
