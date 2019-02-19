@@ -18,6 +18,8 @@ module.exports = {
     email: 'matthew@matthewsecrist.net'
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
