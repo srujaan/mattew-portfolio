@@ -1,7 +1,7 @@
 const path = require('path')
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
 
   const blogPosts = await graphql(`
     {
@@ -49,5 +49,48 @@ exports.createPages = async ({ graphql, actions }) => {
         uid: edge.node.uid
       }
     })
+  })
+
+  // Create redirects from old pages to new.
+  createRedirect({
+    fromPath: '/supprtbot-writeup',
+    toPath: 'project/supprtbot',
+    isPermanent: true
+  })
+
+  createRedirect({
+    fromPath: '/freedom-genetics-llc-website',
+    toPath: '/project/freedom-genetics-llc',
+    isPermanent: true
+  })
+
+  createRedirect({
+    fromPath: '/colorboxes-writeup',
+    toPath: '/project/color-boxes',
+    isPermanent: true
+  })
+
+  createRedirect({
+    fromPath: '/nomadically-writeup',
+    toPath: '/project/nomadically',
+    isPermanent: true
+  })
+
+  createRedirect({
+    fromPath: '/newsfeeder-writeup',
+    toPath: '/project/newsfeeder',
+    isPermanent: true
+  })
+
+  createRedirect({
+    fromPath: '/building-a-basic-http-server-with-elixir-p1',
+    toPath: '/blog/building-a-basic-http-server-with-elixir-p1',
+    isPermanent: true
+  })
+
+  createRedirect({
+    fromPath: '/building-a-basic-http-server-with-elixir-p2',
+    toPath: '/blog/building-a-basic-http-server-with-elixir-p2',
+    isPermanent: true
   })
 }
