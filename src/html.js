@@ -17,6 +17,11 @@ export default function HTML (props) {
           href='https://fonts.gstatic.com/'
           crossOrigin='true'
         />
+        <link
+          rel='preconnect'
+          href='https://fonts.googleapis.com/'
+          crossOrigin='true'
+        />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
