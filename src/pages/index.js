@@ -26,7 +26,7 @@ const IndexPage = ({
   <Layout>
     <Container>
       <SEO title='Matthew Secrist' />
-      <SuperText size='3em'>Hello</SuperText>
+      <SuperText size='2.5em'>Hello</SuperText>
       <h1>{title.text}</h1>
       <BodyContainer dangerouslySetInnerHTML={{ __html: body.html }} />
       <RecentPostsContainer>
