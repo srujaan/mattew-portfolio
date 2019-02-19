@@ -31,7 +31,7 @@ const IndexPage = ({
       <h1>{title.text}</h1>
       <BodyContainer dangerouslySetInnerHTML={{ __html: body.html }} />
       <RecentPostsContainer>
-        <SuperText size='1.5em'>Recent Posts</SuperText>
+        <h2>Recent Posts</h2>
         {edges.map(edge => {
           const {
             node: {
