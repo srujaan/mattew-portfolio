@@ -107,8 +107,8 @@ export default class Contact extends React.Component {
       <Layout>
         <SEO
           title='Contact - Matthew Secrist'
-          description='Words and code.'
-          pathname='/blog'
+          description='Contact me.'
+          pathname='/contact'
         />
         <Container>
           <SuperText size='2.5em'>Contact</SuperText>
