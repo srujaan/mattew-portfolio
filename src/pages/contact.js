@@ -98,8 +98,6 @@ export default class Contact extends React.Component {
         })
         .then(() => navigate(form.getAttribute('action')))
         .catch(error => window.alert(error))
-    } else {
-      window.alert('Looks like you missed something!')
     }
   }
 
