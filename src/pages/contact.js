@@ -23,6 +23,7 @@ const Input = styled.input`
   width: 100%;
   border: none;
   border-bottom: 2px solid var(--text);
+  color: var(--text);
   outline: none;
   padding: 8px 0;
   font-size: 16px;
@@ -134,7 +135,13 @@ export default class Contact extends React.Component {
                 <Label>
                   Your name (minimim 3 characters):
                   <br />
-                  <Input type='text' name='name' onChange={this.handleChange} />
+                  <Input
+                    type='text'
+                    name='name'
+                    onChange={this.handleChange}
+                    autoComplete='off'
+                    required
+                  />
                 </Label>
               </p>
               <p>
@@ -145,6 +152,8 @@ export default class Contact extends React.Component {
                     type='email'
                     name='email'
                     onChange={this.handleChange}
+                    autoComplete='off'
+                    required
                   />
                 </Label>
               </p>
@@ -152,7 +161,13 @@ export default class Contact extends React.Component {
                 <Label>
                   Your message (minimim 10 characters):
                   <br />
-                  <Input name='message' onChange={this.handleChange} />
+                  <Input
+                    type='text'
+                    name='message'
+                    onChange={this.handleChange}
+                    autoComplete='off'
+                    required
+                  />
                 </Label>
               </p>
               <p>
