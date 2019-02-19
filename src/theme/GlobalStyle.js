@@ -8,21 +8,22 @@ const GlobalStyle = createGlobalStyle`
   }
   
   body {
-    --bg: #f8f8f2;
-    --text: #282a36;   
-    --primary: #ff4444;  
-    --navBg: #282a36;
-    --navText: #f8f8f2;
-    --semiDark: #44475a;
+    --bg: hsl(60, 30%, 96%);
+    --text: hsl(231, 15%, 18%);   
+    --primary: hsl(0, 100%, 63%);  
+    --navBg: hsl(231, 15%, 18%);
+    --navText: hsl(60, 30%, 96%);
+    --semiDark: hsl(232, 14%, 31%);
     --codeBg: transparent;
     --shadow: transparent;
-    --white: #f8f8f2;
+    --white: hsl(60, 30%, 96%);
 
     &.dark {
-      --bg: #282a36;
-      --text: #f8f8f2;
-      --primary: #50fa7b;
-      --shadow: #000000;
+      --bg: hsl(231, 15%, 18%);
+      --text: hsl(60, 30%, 96%);
+      --primary: hsl(135, 94%, 65%);
+      --navBg: hsl(231, 15%, 15%);
+      --shadow: hsl(231, 15%, 5%);
       --codeBg: var(--semiDark)
     }
 
@@ -59,6 +60,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
+    font-weight: bold;
     text-decoration: none;
     color: var(--primary);
   }

@@ -9,7 +9,7 @@ import SEO from '../components/SEO'
 import PostListing from '../components/PostListing'
 
 const BodyContainer = styled.div`
-  padding-bottom: 10vh;
+  padding: 0 10vh 10vh 5vh;
 `
 
 const RecentPostsContainer = styled.div`

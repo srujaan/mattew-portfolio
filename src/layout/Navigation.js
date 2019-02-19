@@ -44,6 +44,10 @@ const NavLinksContainer = styled.div`
   a {
     color: var(--primary);
     padding: 10px 0px 10px 0px;
+
+    &:hover {
+      color: var(--white);
+    }
   }
 
   & .active {
