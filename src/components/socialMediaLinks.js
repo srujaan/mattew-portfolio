@@ -19,7 +19,7 @@ const SocialMediaContainer = styled.div`
   margin: 0 auto;
   align-content: center;
   flex-wrap: wrap;
-  max-width: 300px;
+  max-width: 400px;
 
   a {
     svg {
@@ -59,6 +59,9 @@ const SocialMediaLinks = () => (
           </Link>
           <Link href={linkedin} alt='LinkedIn' aria-label='Link to Linked In'>
             <Linkedin size={ICON_SIZE} />
+          </Link>
+          <Link href={codepen} alt='Codepen' aria-label='Link to Codepen'>
+            <Codepen size={ICON_SIZE} />
           </Link>
           <Link
             href={`mailto:${email}`}

@@ -11,10 +11,10 @@ import SocialMediaLinks from '../components/socialMediaLinks'
 
 const ContentContainer = styled.div`
   padding: 2vw;
-  padding-right: 250px;
+  margin-right: 250px;
 
   @media screen and (max-width: ${md}px) {
-    padding-right: 0;
+    margin-right: 0;
   }
 `
 

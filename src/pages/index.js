@@ -8,10 +8,9 @@ import SuperText from '../components/SuperText'
 import SEO from '../components/SEO'
 import PostListing from '../components/PostListing'
 
-const BodyContainer = styled.div``
-
 const RecentPostsContainer = styled.div`
-  text-align: center;
+  padding-top: 10vh;
+  text-align: left;
 `
 
 const IndexPage = ({
@@ -26,18 +25,19 @@ const IndexPage = ({
     <Container>
       <SEO title='Matthew Secrist' />
       <SuperText>Hello</SuperText>
-      <BodyContainer>
+      <div>
         <h1>{title.text}</h1>
         <div
           style={{ paddingBottom: '10vh' }}
           dangerouslySetInnerHTML={{ __html: body.html }}
         />
         <RecentPostsContainer>
+          <h1 style={{ color: 'black' }}>Recent Posts</h1>
           {edges.map(post => (
             <PostListing key={post.node.id} post={post} />
           ))}
         </RecentPostsContainer>
-      </BodyContainer>
+      </div>
     </Container>
   </Layout>
 )

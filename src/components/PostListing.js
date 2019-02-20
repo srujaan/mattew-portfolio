@@ -4,8 +4,8 @@ import moment from 'moment'
 import { Link } from 'gatsby'
 
 const PostTitle = styled.h1`
-  padding: 0;
-  margin: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
 `
 
 const PostListing = ({
