@@ -25,7 +25,7 @@ const ThemeToggle = styled.span`
   z-index: 99;
 `
 const Foot = styled.div`
-  padding: 1em;
+  padding-top: 20vh;
   font-size: 0.75em;
   text-align: center;
 `
@@ -37,18 +37,17 @@ const Layout = ({ children }) => {
     <React.Fragment>
       <GlobalStyle />
       <ThemeToggle onClick={() => toggleTheme()}>Change Theme</ThemeToggle>
-
-      <ContentContainer>{children}</ContentContainer>
-
       <Navigation />
-
-      <Foot>
-        <SocialMediaLinks />
-        Built with <a href='http://www.gatsbyjs.com'>Gatsby</a> and{' '}
-        <a href='http://www.prismic.com'>Prismic</a>.
-        <p>&copy; Copyright 2019, Matthew Secrist</p>
-        <a href='https://github.com/matthewsecrist/v3'>Github</a>
-      </Foot>
+      <ContentContainer>
+        {children}
+        <Foot>
+          <SocialMediaLinks />
+          Built with <a href='http://www.gatsbyjs.com'>Gatsby</a> and{' '}
+          <a href='http://www.prismic.com'>Prismic</a>.
+          <p>&copy; Copyright 2019, Matthew Secrist</p>
+          <a href='https://github.com/matthewsecrist/v3'>Github</a>
+        </Foot>
+      </ContentContainer>
     </React.Fragment>
   )
 }

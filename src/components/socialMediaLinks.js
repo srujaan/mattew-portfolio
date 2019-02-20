@@ -24,7 +24,7 @@ const SocialMediaContainer = styled.div`
   a {
     svg {
       &:hover {
-        fill: var(--semiDark);
+        color: var(--text);
       }
     }
   }
