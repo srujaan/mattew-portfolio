@@ -9,7 +9,7 @@ import SEO from '../components/SEO'
 import PostListing from '../components/PostListing'
 
 const BodyContainer = styled.div`
-  padding: 0 10vh 10vh 5vh;
+  padding: 0 5vw 10vh 5vw;
 `
 
 const RecentPostsContainer = styled.div`
@@ -28,13 +28,18 @@ const IndexPage = ({
     <Container>
       <SEO title='Matthew Secrist' />
       <SuperText>Hello</SuperText>
-      <h1>{title.text}</h1>
-      <BodyContainer dangerouslySetInnerHTML={{ __html: body.html }} />
-      <RecentPostsContainer>
-        {edges.map(post => (
-          <PostListing key={post.node.id} post={post} />
-        ))}
-      </RecentPostsContainer>
+      <BodyContainer>
+        <h1>{title.text}</h1>
+        <div
+          style={{ paddingBottom: '10vh' }}
+          dangerouslySetInnerHTML={{ __html: body.html }}
+        />
+        <RecentPostsContainer>
+          {edges.map(post => (
+            <PostListing key={post.node.id} post={post} />
+          ))}
+        </RecentPostsContainer>
+      </BodyContainer>
     </Container>
   </Layout>
 )
