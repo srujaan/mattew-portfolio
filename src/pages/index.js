@@ -8,12 +8,10 @@ import SuperText from '../components/SuperText'
 import SEO from '../components/SEO'
 import PostListing from '../components/PostListing'
 
-const BodyContainer = styled.div`
-  padding: 0 5vw 10vh 5vw;
-`
+const BodyContainer = styled.div``
 
 const RecentPostsContainer = styled.div`
-  padding: 0 5vw 0 5vw;
+  text-align: center;
 `
 
 const IndexPage = ({
