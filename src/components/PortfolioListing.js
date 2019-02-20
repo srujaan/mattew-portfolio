@@ -81,16 +81,18 @@ const PortfolioListing = ({
   }
 }) => {
   return (
-    <Card>
-      <Img fixed={fixed} />
-      <div className='card-overlay'>
-        <div className='card-details'>
-          <h3>{title.text}</h3>
-          <p>{description.text}</p>
-          <Link to={`/project/${uid}`}>View Project</Link>
+    <Link to={`/project/${uid}`}>
+      <Card>
+        <Img fixed={fixed} />
+        <div className='card-overlay'>
+          <div className='card-details'>
+            <h3>{title.text}</h3>
+            <p>{description.text}</p>
+            <Link to={`/project/${uid}`}>View Project</Link>
+          </div>
         </div>
-      </div>
-    </Card>
+      </Card>
+    </Link>
   )
 }
 
