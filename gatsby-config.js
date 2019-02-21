@@ -43,12 +43,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
-        head: false,
-        anonymize: true,
-        respectDNT: false,
-        exclude: ['/preview/**'],
-        cookieDomain: 'http://www.matthewsecrist.net'
+        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID
       }
     },
     `gatsby-plugin-netlify`
