@@ -28,7 +28,7 @@ pre[class*="language-"] {
 
 /* Code blocks */
 pre[class*="language-"] {
-  padding: 1em;
+  padding: 2em;
   overflow: auto;
   box-shadow: 2px 10px 40px var(--shadow);
 }
@@ -41,7 +41,8 @@ pre[class*="language-"] {
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-  padding: 0.1em;
+  padding: 0px 10px 0px 10px;
+  background: hsla(231, 15%, 15%);
   border-radius: 0.3em;
   white-space: normal;
 }
@@ -62,7 +63,7 @@ pre[class*="language-"] {
 .token.attr-name,
 .token.namespace,
 .token.deleted {
-  color: #ff79c6;
+  color: #ff5555;
 }
 
 .token.function-name,
@@ -87,7 +88,7 @@ pre[class*="language-"] {
 .token.atrule,
 .token.keyword,
 .token.builtin {
-  color: #ff79c6;
+  color: #ffb86c;
 }
 
 .token.string,
