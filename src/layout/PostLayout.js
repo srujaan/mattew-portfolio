@@ -11,16 +11,6 @@ const PostContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
 
-  .language-text {
-    font-family: 'IBM Plex Mono', monospace;
-    font-style: normal;
-    padding: 2px 5px;
-    font-size: 14px;
-    background: var(--text);
-    color: var(--bg);
-    border-radius: 5px;
-  }
-
   .gatsby-highlight {
     max-width: 800px;
     margin: 0 auto;

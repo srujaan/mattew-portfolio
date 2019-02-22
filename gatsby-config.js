@@ -28,7 +28,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['IBM Plex Sans:300,700', 'IBM Plex Mono']
+          families: ['IBM Plex Sans:300,700']
         }
       }
     },
