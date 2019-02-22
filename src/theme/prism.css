@@ -81,7 +81,8 @@ pre[class*="language-"] {
 .token.property,
 .token.class-name,
 .token.constant,
-.token.symbol {
+.token.symbol,
+.token.script {
   color: #ffb86c;
 }
 
