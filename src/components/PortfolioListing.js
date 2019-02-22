@@ -65,30 +65,22 @@ const Card = styled.div`
 `
 
 const PortfolioListing = ({
-  project: {
-    node: {
-      uid,
-      data: {
-        title,
-        description,
-        project_image: {
-          localFile: {
-            childImageSharp: { fixed }
-          }
-        }
-      }
-    }
+  title,
+  description,
+  slug,
+  preview: {
+    childImageSharp: { fixed }
   }
 }) => {
   return (
-    <Link to={`/project/${uid}`}>
+    <Link to={`/project/${slug}`}>
       <Card>
         <Img fixed={fixed} />
         <div className='card-overlay'>
           <div className='card-details'>
-            <h3>{title.text}</h3>
-            <p>{description.text}</p>
-            <Link to={`/project/${uid}`}>View Project</Link>
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <h4>View Project</h4>
           </div>
         </div>
       </Card>
