@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import Layout from './layout'
 import { graphql } from 'gatsby'
 
-import Slices from '../components/Slices'
 import GoBack from '../components/GoBack'
 import SEO from '../components/SEO'
 import moment from 'moment'
@@ -11,30 +10,46 @@ import moment from 'moment'
 const PostContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
+
+  .language-text {
+    font-family: 'IBM Plex Mono', monospace;
+    font-style: normal;
+    padding: 2px 5px;
+    font-size: 14px;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 5px;
+  }
+
+  .gatsby-highlight {
+    font-family: 'IBM Plex Mono', monospace !important;
+
+    border-radius: 5px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px 0px 10px 0px;
+  }
 `
 
 const PostLayout = ({
   data: {
-    uid,
-    prismicPost: { data }
+    markdownRemark: {
+      frontmatter: { slug, title, description, date },
+      html
+    }
   }
 }) => {
-  const { body, title, date, description } = data
   return (
     <Layout>
       <SEO
-        title={`${title.text} - Matthew Secrist`}
+        title={`${title} - Matthew Secrist`}
         description={description}
-        pathname={`/blog/${uid}`}
+        pathname={`/blog/${slug}`}
       />
       <GoBack to='/blog' name='Blog' />
-      <PostContainer>
-        <h1>{title.text}</h1>
-        <p style={{ fontWeight: 'bold' }}>
-          {moment(date).format('MMMM Do YYYY')}
-        </p>
-        <Slices body={body} />
-      </PostContainer>
+      <h1>{title}</h1>
+      <sub>{moment(date).format('LL')}</sub>
+      <PostContainer dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   )
 }
@@ -42,81 +57,15 @@ const PostLayout = ({
 export default PostLayout
 
 export const query = graphql`
-  query PostBySlug($uid: String!) {
-    prismicPost(uid: { eq: $uid }) {
-      uid
-      first_publication_date
-      last_publication_date
-      data {
-        title {
-          text
-        }
+  query postBySlug($slug: String!) {
+    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+      frontmatter {
+        slug
+        title
         description
         date
-
-        body {
-          ... on PrismicPostBodyText {
-            slice_type
-            id
-            primary {
-              text {
-                html
-              }
-            }
-          }
-          ... on PrismicPostBodyCodeBlock {
-            slice_type
-            id
-            primary {
-              code_block {
-                localFile {
-                  childImageSharp {
-                    fluid(maxWidth: 800, quality: 80) {
-                      ...GatsbyImageSharpFluid_withWebp_noBase64
-                    }
-                  }
-                }
-              }
-            }
-          }
-          ... on PrismicPostBodyQuote {
-            slice_type
-            id
-            primary {
-              quote {
-                html
-                text
-              }
-            }
-          }
-          ... on PrismicPostBodyImage {
-            slice_type
-            id
-            primary {
-              image {
-                localFile {
-                  childImageSharp {
-                    fluid(maxWidth: 800, quality: 80) {
-                      ...GatsbyImageSharpFluid_withWebp_noBase64
-                    }
-                  }
-                }
-              }
-            }
-          }
-          ... on PrismicPostBodyGif {
-            slice_type
-            id
-            primary {
-              gif {
-                alt
-                copyright
-                url
-              }
-            }
-          }
-        }
       }
+      html
     }
   }
 `

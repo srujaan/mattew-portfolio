@@ -8,21 +8,15 @@ const PostTitle = styled.h1`
   margin-bottom: 0;
 `
 
-const PostListing = ({
-  post: {
-    node: {
-      uid,
-      data: { date, title, description }
-    }
-  }
-}) => (
-  <React.Fragment key={`${uid}`}>
-    <Link to={`/blog/${uid}`}>
-      <PostTitle key={`${uid}-title`}>{title.text}</PostTitle>
-    </Link>
-    <sub>{moment(date).format('LL')}</sub>
-    <p key={`${uid}-subtitle`}>{description}</p>
-  </React.Fragment>
-)
-
+const PostListing = ({ slug, title, description, date }) => {
+  return (
+    <React.Fragment key={`${slug}`}>
+      <Link to={`/blog/${slug}`}>
+        <PostTitle>{title}</PostTitle>
+      </Link>
+      <sub>{moment(date).format('LL')}</sub>
+      <p>{description}</p>
+    </React.Fragment>
+  )
+}
 export default PostListing

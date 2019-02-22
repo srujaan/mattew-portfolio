@@ -27,7 +27,7 @@ const Panel = styled.div`
 
 const PortfolioPage = ({
   data: {
-    allPrismicProject: { edges: projects }
+    allMarkdownRemark: { edges: projects }
   }
 }) => {
   return (
@@ -40,9 +40,9 @@ const PortfolioPage = ({
         />
         <SuperText>Portfolio</SuperText>
         <GridWrapper>
-          {projects.map(project => (
-            <Panel key={project.node.id}>
-              <PortfolioListing project={project} />
+          {projects.map(({ node: { id, frontmatter } }) => (
+            <Panel key={id}>
+              <PortfolioListing {...frontmatter} />
             </Panel>
           ))}
         </GridWrapper>
@@ -55,24 +55,18 @@ export default PortfolioPage
 
 export const pageQuery = graphql`
   {
-    allPrismicProject {
+    allMarkdownRemark(filter: { frontmatter: { type: { eq: "project" } } }) {
       edges {
         node {
           id
-          uid
-          data {
-            title {
-              text
-            }
-            description {
-              text
-            }
-            project_image {
-              localFile {
-                childImageSharp {
-                  fixed(width: 250, height: 250) {
-                    ...GatsbyImageSharpFixed_withWebp_noBase64
-                  }
+          frontmatter {
+            slug
+            title
+            description
+            preview {
+              childImageSharp {
+                fixed(width: 250, height: 250) {
+                  ...GatsbyImageSharpFixed_withWebp_noBase64
                 }
               }
             }

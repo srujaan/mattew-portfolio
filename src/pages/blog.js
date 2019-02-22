@@ -9,7 +9,7 @@ import SEO from '../components/SEO'
 
 const BlogPage = ({
   data: {
-    allPrismicPost: { edges: posts }
+    allMarkdownRemark: { edges }
   }
 }) => {
   return (
@@ -21,9 +21,9 @@ const BlogPage = ({
       />
       <Container>
         <SuperText>Blog</SuperText>
-        {posts.map(post => (
-          <PostListing key={post.node.id} post={post} />
-        ))}
+        {edges.map(post => {
+          return <PostListing key={post.node.id} {...post.node.frontmatter} />
+        })}
       </Container>
     </Layout>
   )
@@ -33,17 +33,17 @@ export default BlogPage
 
 export const pageQuery = graphql`
   {
-    allPrismicPost(sort: { fields: [data___date], order: DESC }) {
+    allMarkdownRemark(
+      filter:{fileAbsolutePath: {regex: "/(\/content\/posts)/.*\\.md$/"}}, 
+      sort: { fields: frontmatter___date, order: DESC }) {
       edges {
         node {
           id
-          uid
-          data {
-            date
-            title {
-              text
-            }
+          frontmatter {
+            slug
+            title
             description
+            date
           }
         }
       }

@@ -5,10 +5,12 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const blogPosts = await graphql(`
     {
-      allPrismicPost {
+      allMarkdownRemark(filter: { frontmatter: { type: { eq: "post" } } }) {
         edges {
           node {
-            uid
+            frontmatter {
+              slug
+            }
           }
         }
       }
@@ -17,22 +19,25 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const blogTemplate = path.resolve('src/layout/PostLayout.js')
 
-  blogPosts.data.allPrismicPost.edges.forEach(edge => {
+  blogPosts.data.allMarkdownRemark.edges.forEach(edge => {
+    const { slug } = edge.node.frontmatter
     createPage({
-      path: `/blog/${edge.node.uid}`,
+      path: `/blog/${slug}`,
       component: blogTemplate,
       context: {
-        uid: edge.node.uid
+        slug: slug
       }
     })
   })
 
   const portfolioPages = await graphql(`
     {
-      allPrismicProject {
+      allMarkdownRemark(filter: { frontmatter: { type: { eq: "project" } } }) {
         edges {
           node {
-            uid
+            frontmatter {
+              slug
+            }
           }
         }
       }
@@ -41,12 +46,13 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const portfolioTemplate = path.resolve('src/layout/ProjectLayout.js')
 
-  portfolioPages.data.allPrismicProject.edges.forEach(edge => {
+  portfolioPages.data.allMarkdownRemark.edges.forEach(edge => {
+    const { slug } = edge.node.frontmatter
     createPage({
-      path: `/project/${edge.node.uid}`,
+      path: `/project/${slug}`,
       component: portfolioTemplate,
       context: {
-        uid: edge.node.uid
+        slug: slug
       }
     })
   })

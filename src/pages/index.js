@@ -24,10 +24,7 @@ const RecentPostsContainer = styled.div`
 
 const IndexPage = ({
   data: {
-    allPrismicPost: { edges },
-    prismicIndexpage: {
-      data: { title, body }
-    }
+    allMarkdownRemark: { edges }
   }
 }) => (
   <Layout>
@@ -35,12 +32,22 @@ const IndexPage = ({
       <SEO title='Matthew Secrist' />
       <SuperText>Hello</SuperText>
       <div>
-        <h1>{title.text}</h1>
-        <div dangerouslySetInnerHTML={{ __html: body.html }} />
+        <h1>My name is Matthew Secrist</h1>
+        <p>
+          I am a full stack developer, designer and I’m currently working
+          towards becoming an AWS Certified Solutions Architect.
+        </p>
+        <p>
+          I love to work with Javascript, NodeJS, and Elixir. I’ve dabbled in
+          Ruby, Python and Erlang. My front end framework of choice is React,
+          but I've got some experience with Vue and Ember as well. I’m familiar
+          with AWS services like Lamdba, DynamoDB, API Gateway and S3.
+        </p>
+        <p>I am currently available for remote opportunities.</p>
         <RecentPostsContainer>
           <h1 className='title'>Recent Posts</h1>
           {edges.map(post => (
-            <PostListing key={post.node.id} post={post} />
+            <PostListing key={post.node.id} {...post.node.frontmatter} />
           ))}
         </RecentPostsContainer>
       </div>
@@ -52,28 +59,19 @@ export default IndexPage
 
 export const pageQuery = graphql`
   {
-    prismicIndexpage {
-      data {
-        title {
-          text
-        }
-        body {
-          html
-        }
-      }
-    }
-
-    allPrismicPost(limit: 3, sort: { fields: [data___date], order: DESC }) {
+    allMarkdownRemark(
+      limit: 3
+      filter:{fileAbsolutePath: {regex: "/(\/content\/posts)/.*\\.md$/"}}, 
+      sort: { fields: frontmatter___date, order: DESC }
+    ) {
       edges {
         node {
           id
-          uid
-          data {
-            date
-            title {
-              text
-            }
+          frontmatter {
+            slug
+            title
             description
+            date
           }
         }
       }
