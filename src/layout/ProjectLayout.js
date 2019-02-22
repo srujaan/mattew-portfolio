@@ -23,7 +23,6 @@ const ProjectLayout = ({
     }
   }
 }) => {
-  console.log(fluid)
   return (
     <Layout>
       <SEO

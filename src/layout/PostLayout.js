@@ -22,9 +22,6 @@ const PostContainer = styled.div`
   }
 
   .gatsby-highlight {
-    font-family: 'IBM Plex Mono', monospace !important;
-
-    border-radius: 5px;
     max-width: 800px;
     margin: 0 auto;
     padding: 10px 0px 10px 0px;
