@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
     --navText: hsl(60, 30%, 96%);
     --semiDark: hsl(232, 14%, 31%);
     --codeBg: transparent;
-    --shadow: transparent;
+    --shadow: hsla(231, 15%, 8%, .8);
     --white: hsl(60, 30%, 96%);
 
     &.dark {
@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
       --text: hsl(60, 30%, 96%);
       --primary: hsl(135, 94%, 65%);
       --navBg: hsl(231, 15%, 15%);
-      --shadow: hsl(231, 15%, 5%);
+      --shadow: transparent
       --codeBg: var(--semiDark)
     }
 
