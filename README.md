@@ -4,4 +4,4 @@
 
 Personal website built using Gatsby.
 
-![preview](https://github.com/matthewsecrist/v3/raw/master/src/preview.png)
+![preview](./preview.png)
