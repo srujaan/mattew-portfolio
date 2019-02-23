@@ -43,8 +43,7 @@ const Layout = ({ children }) => {
         {children}
         <Foot>
           <SocialMediaLinks />
-          Built with <a href='http://www.gatsbyjs.com'>Gatsby</a> and{' '}
-          <a href='http://www.prismic.io'>Prismic</a>.
+          Built with <a href='http://www.gatsbyjs.org'>Gatsby</a>.
           <p>&copy; Copyright 2019, Matthew Secrist</p>
           <a href='https://github.com/matthewsecrist/v3'>Github</a>
         </Foot>
