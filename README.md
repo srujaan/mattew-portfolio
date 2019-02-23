@@ -2,4 +2,6 @@
 
 # Personal Website
 
-Personal website built using Gatsby, Styled-Components and Prismic.
+Personal website built using Gatsby.
+
+![preview](https://github.com/matthewsecrist/v3/raw/master/src/preview.png)
