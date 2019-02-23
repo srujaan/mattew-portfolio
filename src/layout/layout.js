@@ -19,7 +19,7 @@ const ContentContainer = styled.div`
 `
 
 const ThemeToggle = styled.span`
-  cursor: pointer
+  cursor: pointer;
   position: absolute;
   top: 10;
   left: 10;
