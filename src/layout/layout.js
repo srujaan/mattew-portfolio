@@ -9,9 +9,6 @@ import { md } from 'styled-bootstrap-responsive-breakpoints'
 
 import SocialMediaLinks from '../components/socialMediaLinks'
 
-import { Moon } from 'styled-icons/fa-solid/Moon'
-import { Sun } from 'styled-icons/fa-solid/Sun'
-
 const ContentContainer = styled.div`
   padding: 2vw;
   margin-right: 250px;
@@ -22,7 +19,7 @@ const ContentContainer = styled.div`
 `
 
 const ThemeToggle = styled.span`
-  cursor: pointer;
+  cursor: pointer
   position: absolute;
   top: 10;
   left: 10;
@@ -37,14 +34,10 @@ const Foot = styled.div`
 const Layout = ({ children }) => {
   const [toggleTheme] = useTheme()
 
-  const darkMode = document.body.className === 'dark'
-
   return (
     <React.Fragment>
       <GlobalStyle />
-      <ThemeToggle onClick={() => toggleTheme()}>
-        Use {darkMode ? 'Light' : 'Dark'} Mode?
-      </ThemeToggle>
+      <ThemeToggle onClick={() => toggleTheme()}>Change Theme</ThemeToggle>
       <Navigation />
       <ContentContainer>
         {children}
