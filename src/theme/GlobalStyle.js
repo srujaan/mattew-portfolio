@@ -31,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
     transition: background-color .3s ease-in-out;
     color: var(--text);
 
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
     font-weight: 400;
     font-style: normal;
 
@@ -46,7 +46,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1, h2, h3, h4, h5 {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
     font-weight: 700;
     font-style: normal;
     color: var(--primary);

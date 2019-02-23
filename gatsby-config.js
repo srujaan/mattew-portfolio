@@ -24,14 +24,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
-    {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        google: {
-          families: ['IBM Plex Sans:300,700']
-        }
-      }
-    },
+
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
