@@ -12,6 +12,12 @@ export default function HTML (props) {
           name='viewport'
           content='width=device-width, initial-scale=1, shrink-to-fit=no'
         />
+        <link rel='dns-prefetch' href='//www.google-analytics.com' />
+        <link
+          href='https://google-analytics.com'
+          rel='preconnect'
+          crossOrigin='true'
+        />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
