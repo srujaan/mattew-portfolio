@@ -296,12 +296,12 @@ import useTodoList from "./useTodoList";
 import useVisibilityFilter from "./useVisibilityFilter";
 
 const useStore = () => {
-  const [todos, todoReducer] = useTodoList();
-  const [filter, filterReducer] = useVisibilityFilter();
+  const [todos, changeTodos] = useTodoList();
+  const [filter, changeFilter] = useVisibilityFilter();
 
   const state = { todos, filter };
 
-  const reducers = { todoReducer, filterReducer };
+  const reducers = { changeFilter, changeTodos };
 
   return [state, reducers];
 };
@@ -320,16 +320,16 @@ import AddTodo from "./AddTodo";
 import TodosList from "./TodoList";
 
 const App = () => {
-  const [{ todos, filter }, { filterReducer, todoReducer }] = useStore();
+  const [{ todos, filter }, { changeFilter, changeTodos }] = useStore();
   return (
     <div>
       <h1>Todo List</h1>
       <p>
         Add a todo to the list. Click it to complete. Double click to remove.
       </p>
-      <Filter filter={filter} changeFilter={filterReducer} />
-      <AddTodo dispatch={todoReducer} />
-      <TodosList dispatch={todoReducer} todos={todos} filter={filter} />
+      <Filter filter={filter} changeFilter={changeFilter} />
+      <AddTodo dispatch={changeTodos} />
+      <TodosList dispatch={changeTodos} todos={todos} filter={filter} />
     </div>
   );
 };
