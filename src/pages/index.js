@@ -42,9 +42,11 @@ const IndexPage = ({
         <p>I am currently available for remote opportunities.</p>
         <RecentPostsContainer>
           <h1 className='title'>Recent Posts</h1>
-          {edges.map(post => (
-            <PostListing key={post.node.id} {...post.node.frontmatter} />
-          ))}
+          <div id='recent-posts'>
+            {edges.map(post => (
+              <PostListing key={post.node.id} {...post.node.frontmatter} />
+            ))}
+          </div>
         </RecentPostsContainer>
       </div>
     </Container>

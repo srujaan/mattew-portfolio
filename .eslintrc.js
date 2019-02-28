@@ -1,6 +1,6 @@
 module.exports = {
   extends: ['standard'],
-  plugins: ['standard', 'react'],
+  plugins: ['standard', 'react', 'cypress'],
   rules: {
     'no-var': 'error', // optional, recommended when using es6+
     'no-unused-vars': 1, // recommended
@@ -41,5 +41,8 @@ module.exports = {
   parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 8 // optional, recommended 6+
+  },
+  env: {
+    'cypress/globals': true
   }
 }

@@ -1,7 +1,7 @@
 {
-  "name": "thirteenthstreet",
+  "name": "matthewsecrist",
   "private": true,
-  "description": "A beautiful portfolio",
+  "description": "Personal Portfolio of Matthew Secrist",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -9,7 +9,8 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "cy:open": "cypress open",
+    "test": "start-server-and-test develop http://localhost:8000 cy:open"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
@@ -45,14 +46,17 @@
     "url": "https://github.com/matthewsecrist/v3/issues"
   },
   "devDependencies": {
+    "cypress": "^3.1.5",
     "dotenv": "^6.2.0",
     "eslint": "^5.13.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-config-standard-react": "^7.0.2",
+    "eslint-plugin-cypress": "^2.2.1",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-react": "^7.12.3",
-    "eslint-plugin-standard": "^4.0.0"
+    "eslint-plugin-standard": "^4.0.0",
+    "start-server-and-test": "^1.7.11"
   }
 }

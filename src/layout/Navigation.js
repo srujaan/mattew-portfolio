@@ -38,7 +38,7 @@ const NavMenu = styled.div`
   }
 `
 
-const NavLinksContainer = styled.div`
+const NavLinksContainer = styled.nav`
   text-align: center;
   width: 200px;
   a {
@@ -96,11 +96,14 @@ const Navigation = () => {
   return (
     <React.Fragment>
       <MobileNavMenu
+        id='nav-menu-button'
         size={48}
         toggled={!navExpanded}
         onClick={() => toggleNavExpand(!navExpanded)}
       />
-      <NavMenu visible={navExpanded}>{NavLinks()}</NavMenu>
+      <NavMenu id='nav' visible={navExpanded}>
+        {NavLinks()}
+      </NavMenu>
     </React.Fragment>
   )
 }
