@@ -93,20 +93,16 @@ const Navigation = () => {
     </NavLinksContainer>
   )
 
-  const Nav = () => {
-    return (
-      <React.Fragment>
-        <MobileNavMenu
-          size={48}
-          toggled={!navExpanded}
-          onClick={() => toggleNavExpand(!navExpanded)}
-        />
-        <NavMenu visible={navExpanded}>{NavLinks()}</NavMenu>
-      </React.Fragment>
-    )
-  }
-
-  return Nav()
+  return (
+    <React.Fragment>
+      <MobileNavMenu
+        size={48}
+        toggled={!navExpanded}
+        onClick={() => toggleNavExpand(!navExpanded)}
+      />
+      <NavMenu visible={navExpanded}>{NavLinks()}</NavMenu>
+    </React.Fragment>
+  )
 }
 
 export default Navigation
