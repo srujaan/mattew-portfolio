@@ -16,10 +16,6 @@ const RecentPostsContainer = styled.div`
     font-size: 2em;
     color: var(--text);
   }
-
-  h1 {
-    font-size: 1.5em;
-  }
 `
 
 const IndexPage = ({
@@ -32,7 +28,7 @@ const IndexPage = ({
       <SEO title='Matthew Secrist' />
       <SuperText>Hello</SuperText>
       <div>
-        <h1>My name is Matthew Secrist</h1>
+        <h1>My name is Matthew Secrist.</h1>
         <p>
           I am a Web Developer, currently working towards becoming an AWS
           Certified Solutions Architect.
