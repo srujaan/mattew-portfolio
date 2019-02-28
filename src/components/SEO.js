@@ -27,17 +27,15 @@ const SEO = ({ title, description, pathname, article }) => (
         <React.Fragment>
           <Helmet title={seo.title} titleTemplate={titleTemplate}>
             <meta name='description' content={seo.description} />
-
+            <meta propery='og:locale' content='en' />
             {seo.url && <meta property='og:url' content={seo.url} />}
-            {(article ? true : null) && (
-              <meta property='og:type' content='article' />
-            )}
+            {article && <meta property='og:type' content='article' />}
             {seo.title && <meta property='og:title' content={seo.title} />}
+
             {seo.description && (
               <meta property='og:description' content={seo.description} />
             )}
 
-            <meta name='twitter:card' content='summary_large_image' />
             {twitterUsername && (
               <meta name='twitter:creator' content={twitterUsername} />
             )}
@@ -45,6 +43,10 @@ const SEO = ({ title, description, pathname, article }) => (
             {seo.description && (
               <meta name='twitter:description' content={seo.description} />
             )}
+            <meta
+              name='keywords'
+              content={`web developer, web developer in boone iowa, front end developer, elixir, react, javascript, matthew secrist, matthewsecrist`}
+            />
           </Helmet>
         </React.Fragment>
       )

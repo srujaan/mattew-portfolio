@@ -34,8 +34,8 @@ const IndexPage = ({
       <div>
         <h1>My name is Matthew Secrist</h1>
         <p>
-          I am a full stack developer, designer and I’m currently working
-          towards becoming an AWS Certified Solutions Architect.
+          I am a Web Developer, currently working towards becoming an AWS
+          Certified Solutions Architect.
         </p>
         <p>
           I love to work with Javascript, NodeJS, and Elixir. I’ve dabbled in

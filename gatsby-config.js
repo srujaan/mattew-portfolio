@@ -9,7 +9,7 @@ module.exports = {
     title: `Matthew Secrist`,
     titleTemplate: '%s',
     siteUrl: `https://www.matthewsecrist.net`,
-    description: `Matthew Secrist - https://www.matthewsecrist.net - Full Stack Web Developer in Boone, Iowa.`,
+    description: `Matthew Secrist - https://www.matthewsecrist.net - Web Developer in Boone, Iowa.`,
     twitterUsername: `@_mattsecrist`,
     twitter: 'https://twitter.com/_mattsecrist',
     github: 'http://www.github.com/matthewsecrist',
