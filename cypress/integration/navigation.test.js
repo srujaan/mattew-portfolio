@@ -6,6 +6,7 @@ describe('Navigation', () => {
     beforeEach(() => {
       cy.viewport(1024, 768)
     })
+
     it('displays properly', () => {
       cy.get('nav')
         .children()
@@ -37,8 +38,17 @@ describe('Navigation', () => {
       cy.get('nav').should('not.be.visible')
       cy.get('#nav-menu-button').click()
       cy.get('nav').should('be.visible')
+      cy.get('nav')
+        .children()
+        .should('have.length', 4)
       cy.get('#nav-menu-button').click()
       cy.get('nav').should('not.be.visible')
+    })
+
+    it('changes the page on a nav item click', () => {
+      cy.get('#nav-menu-button').click()
+      cy.contains('blog').click()
+      cy.contains('Blog')
     })
   })
 })
