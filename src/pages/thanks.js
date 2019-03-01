@@ -14,7 +14,7 @@ const Center = styled.div`
   flex-direction: column;
 `
 
-const FourOhFour = () => {
+const Thanks = () => {
   return (
     <Layout>
       <SEO title='Matthew Secrist' />
@@ -27,4 +27,4 @@ const FourOhFour = () => {
   )
 }
 
-export default FourOhFour
+export default Thanks
