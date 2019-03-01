@@ -9,5 +9,4 @@ cache:
 install:
   - yarn
 script:
-  - yarn develop
-  - $(npm bin)/cypress run --record
+  - yarn ci

@@ -24,8 +24,4 @@ describe('Index Page', () => {
       .children('a')
       .should('have.length', 3)
   })
-
-  it('renders the footer', () => {
-    cy.contains('footer')
-  })
 })
