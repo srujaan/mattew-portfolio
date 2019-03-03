@@ -30,10 +30,6 @@ const IndexPage = ({
       <div>
         <h1>My name is Matthew Secrist.</h1>
         <p>
-          I am a Web Developer, currently working towards becoming an AWS
-          Certified Solutions Architect.
-        </p>
-        <p>
           I love to work with Javascript, NodeJS, and Elixir. I’ve dabbled in
           Ruby, Python and Erlang. My front end framework of choice is React,
           but I've got some experience with Vue and Ember as well. I’m familiar
