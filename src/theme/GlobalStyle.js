@@ -1,5 +1,21 @@
 import { createGlobalStyle } from 'styled-components'
 
+const foregroundColor = '#89DDFF'
+const backgroundColor = '#01013b'
+const selectionColor = 'hsl(240, 97%, 11%)'
+const black = '#222222'
+const red = '#E80082'
+const green = '#b2ffaf'
+const yellow = '#ffbb00'
+const blue = '#B2CCD6'
+const magenta = '#C792EA'
+const cyan = '#B2CCD6'
+const white = '#DFEEFF'
+const lightBlack = 'rgba(255, 255, 255, 0.2)'
+const lightWhite = '#FFFFFF'
+const darkBlue = 'hsl(240, 90%, 11%)'
+const lightBlue = '#B2CCD6'
+
 const GlobalStyle = createGlobalStyle`
   *,
   *:before,
@@ -8,33 +24,31 @@ const GlobalStyle = createGlobalStyle`
   }
   
   body {
-    --bg: hsl(60, 30%, 96%);
-    --text: hsl(231, 15%, 18%);   
-    --primary: hsl(0, 100%, 63%);  
-    --navBg: hsl(231, 15%, 18%);
-    --navText: hsl(60, 30%, 96%);
-    --semiDark: hsl(232, 14%, 31%);
+    --bg: ${lightWhite};
+    --text: ${backgroundColor};   
+    --primary: ${yellow};  
+    --navBg: ${selectionColor};
+    --navText: ${blue};
+    --semiDark: ${black};
     --codeBg: transparent;
-    --shadow: hsla(231, 15%, 8%, .8);
-    --white: hsl(60, 30%, 96%);
+    --shadow: ${black};
+    --white: ${lightWhite};
 
     &.dark {
-      --bg: hsl(231, 15%, 18%);
-      --text: hsl(60, 30%, 96%);
-      --primary: hsl(135, 94%, 65%);
-      --navBg: hsl(231, 15%, 15%);
-      --shadow: transparent
-      --codeBg: var(--semiDark)
+      --bg: ${backgroundColor};
+      --text: ${white};
+      --primary: ${green};
+      --shadow: transparent;
+      --codeBg: ${darkBlue};
     }
 
     background-color: var(--bg);
-    transition: background-color .3s ease-in-out;
+
     color: var(--text);
 
     font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
     font-weight: 400;
-    font-style: normal;
-
+    transition: background-color 0.3s ease-in-out;
     font-size: 1.2rem;
 
     text-rendering: optimizeLegibility;
@@ -48,11 +62,7 @@ const GlobalStyle = createGlobalStyle`
   h1, h2, h3, h4, h5 {
     font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
     font-weight: 700;
-    font-style: normal;
     color: var(--primary);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-smooth: always;
   }
 
   h1 {
