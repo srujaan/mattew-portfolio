@@ -6,3 +6,10 @@
 Personal website built using Gatsby.
 
 ![preview](./preview.png)
+
+# Features
+
+- Gatsby / React
+- Light mode / Dark Mode
+- Styled-Components
+- Color scheme based on a custom VS Code theme I am creating.
