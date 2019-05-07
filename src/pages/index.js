@@ -25,20 +25,25 @@ const IndexPage = ({
 }) => (
   <Layout>
     <Container>
-      <SEO title='Matthew Secrist' />
+      <SEO title="Matthew Secrist" />
       <SuperText>Hello</SuperText>
       <div>
         <h1>My name is Matthew Secrist.</h1>
         <p>
+          Software Engineer at{' '}
+          <a href="http://www.articulate.com">Articulate</a>.
+        </p>
+        <p>
           I love to work with Javascript, NodeJS, and Elixir. I’ve dabbled in
           Ruby, Python and Erlang. My front end framework of choice is React,
-          but I've got some experience with Vue and Ember as well. I’m familiar
-          with AWS services like Lamdba, DynamoDB, API Gateway and S3.
+          but I've got some experience with Vue and Ember as well.
         </p>
-        <p>I am currently available for remote opportunities.</p>
+
+        <p>Sometimes I write things, sometimes I make things.</p>
+
         <RecentPostsContainer>
-          <h1 className='title'>Recent Posts</h1>
-          <div id='recent-posts'>
+          <h1 className="title">Recent Posts</h1>
+          <div id="recent-posts">
             {edges.map(post => (
               <PostListing key={post.node.id} {...post.node.frontmatter} />
             ))}
