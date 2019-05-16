@@ -10,7 +10,7 @@ describe('Navigation', () => {
     it('displays properly', () => {
       cy.get('nav')
         .children()
-        .should('have.length', 4)
+        .should('have.length', 3)
     })
 
     it('changes pages on click', () => {
@@ -40,7 +40,7 @@ describe('Navigation', () => {
       cy.get('nav').should('be.visible')
       cy.get('nav')
         .children()
-        .should('have.length', 4)
+        .should('have.length', 3)
       cy.get('#nav-menu-button').click()
       cy.get('nav').should('not.be.visible')
     })
