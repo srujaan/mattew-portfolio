@@ -84,12 +84,6 @@ const Navigation = () => {
           portfolio
         </Link>
       </h2>
-
-      <h2>
-        <Link to='/contact' activeClassName='active'>
-          contact
-        </Link>
-      </h2>
     </NavLinksContainer>
   )
 
