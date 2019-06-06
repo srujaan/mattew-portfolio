@@ -1,20 +1,18 @@
 import { createGlobalStyle } from 'styled-components'
 
-const foregroundColor = '#89DDFF'
-const backgroundColor = '#01013b'
-const selectionColor = 'hsl(240, 97%, 11%)'
+const primaryDark = 'hsl(0, 0%, 10%)'
+const secondaryDark = 'hsl(0, 0%, 13%)'
+
+const primaryMid = 'hsl(0, 0%, 30%)'
+const secondaryMid = 'hsl(0, 0%, 35%)'
+
+const primaryLight = 'hsl(0, 0%, 80%)'
+const secondaryLight = 'hsl(0, 0%, 85%)'
+
+const white = 'hsl(0, 0%, 90%)'
+
 const black = '#222222'
-const red = '#E80082'
-const green = '#b2ffaf'
-const yellow = '#ffbb00'
-const blue = '#B2CCD6'
-const magenta = '#C792EA'
-const cyan = '#B2CCD6'
-const white = '#DFEEFF'
-const lightBlack = 'rgba(255, 255, 255, 0.2)'
 const lightWhite = '#FFFFFF'
-const darkBlue = 'hsl(240, 90%, 11%)'
-const lightBlue = '#B2CCD6'
 
 const GlobalStyle = createGlobalStyle`
   *,
@@ -24,22 +22,22 @@ const GlobalStyle = createGlobalStyle`
   }
   
   body {
-    --bg: ${lightWhite};
-    --text: ${backgroundColor};   
-    --primary: ${yellow};  
-    --navBg: ${selectionColor};
-    --navText: ${blue};
-    --semiDark: ${black};
+    --bg: ${white};
+    --text: ${primaryDark};   
+    --primary: ${primaryMid};  
+    --navBg: ${secondaryDark};
+    --navText: ${white};
+    --semiDark: ${primaryMid};
     --codeBg: transparent;
     --shadow: ${black};
     --white: ${lightWhite};
 
     &.dark {
-      --bg: ${backgroundColor};
-      --text: ${white};
-      --primary: ${green};
+      --bg: ${primaryDark};
+      --text: ${primaryLight};
+      --primary: ${secondaryLight};
       --shadow: transparent;
-      --codeBg: ${darkBlue};
+      --codeBg: ${secondaryMid};
     }
 
     background-color: var(--bg);
