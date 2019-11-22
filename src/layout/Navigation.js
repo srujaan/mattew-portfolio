@@ -52,11 +52,11 @@ const NavLinksContainer = styled.nav`
 
   & .active {
     &::before {
-      content: '{ ';
+      content: "{ ";
       color: var(--white);
     }
     &::after {
-      content: ' }';
+      content: " }";
       color: var(--white);
     }
   }
@@ -68,20 +68,14 @@ const Navigation = () => {
   const NavLinks = () => (
     <NavLinksContainer>
       <h2>
-        <Link to='/' activeClassName='active'>
+        <Link to="/" activeClassName="active">
           home
         </Link>
       </h2>
 
       <h2>
-        <Link to='/blog' activeClassName='active'>
+        <Link to="/blog" activeClassName="active">
           blog
-        </Link>
-      </h2>
-
-      <h2>
-        <Link to='/portfolio' activeClassName='active'>
-          portfolio
         </Link>
       </h2>
     </NavLinksContainer>
@@ -90,12 +84,12 @@ const Navigation = () => {
   return (
     <React.Fragment>
       <MobileNavMenu
-        id='nav-menu-button'
+        id="nav-menu-button"
         size={48}
         toggled={!navExpanded}
         onClick={() => toggleNavExpand(!navExpanded)}
       />
-      <NavMenu id='nav' visible={navExpanded}>
+      <NavMenu id="nav" visible={navExpanded}>
         {NavLinks()}
       </NavMenu>
     </React.Fragment>

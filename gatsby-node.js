@@ -30,7 +30,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  const portfolioPages = await graphql(`
+  /*   const portfolioPages = await graphql(`
     {
       allMarkdownRemark(filter: { frontmatter: { type: { eq: "project" } } }) {
         edges {
@@ -55,7 +55,7 @@ exports.createPages = async ({ graphql, actions }) => {
         slug: slug
       }
     })
-  })
+  }) */
 
   // Create redirects from old pages to new.
   createRedirect({

@@ -12,7 +12,8 @@
     "cy:open": "cypress open",
     "cy:ci": "cypress run",
     "test": "start-server-and-test develop http://localhost:8000 cy:open",
-    "ci": "start-server-and-test develop http://localhost:8000 cy:ci"
+    "ci": "start-server-and-test develop http://localhost:8000 cy:ci",
+    "lint": "./node_modules/.bin/eslint . --ext .js,.jsx"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
