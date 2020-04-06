@@ -25,10 +25,10 @@ const IndexPage = ({
 }) => (
   <Layout>
     <Container>
-      <SEO title="Matthew Secrist" />
-      <SuperText>Hello</SuperText>
+      <SEO title="SrujanSai" />
+      <SuperText>Hola</SuperText>
       <div>
-        <h1>My name is Matthew Secrist.</h1>
+        <h1>My name is Srujan.</h1>
         <p>
           Software Engineer at{' '}
           <a href="http://www.articulate.com">Articulate</a>.
